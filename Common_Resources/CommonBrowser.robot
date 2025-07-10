@@ -1,9 +1,38 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    String
+Library    OperatingSystem
 
 *** Keywords ***
 Open Browser With Unique Profile
+    [Arguments]    ${url}    ${alias}
+    ${is_ci}=    Get Environment Variable    GITHUB_ACTIONS
+    Run Keyword If    '${is_ci}' == 'true'
+    ...    Open Browser In CI Mode    ${url}    ${alias}
+    ...    ELSE
+    ...    Open Browser Locally With Unique Profile    ${url}    ${alias}
+
+Open Incognito Browser With Unique Profile
+    [Arguments]    ${url}    ${alias}
+    ${is_ci}=    Get Environment Variable    GITHUB_ACTIONS
+    Run Keyword If    '${is_ci}' == 'true'
+    ...    Open Browser In CI Mode    ${url}    ${alias}    --incognito
+    ...    ELSE
+    ...    Open Incognito Browser Locally With Unique Profile    ${url}    ${alias}
+
+Open Browser In CI Mode
+    [Arguments]    ${url}    ${alias}    @{extra_args}
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --headless=new
+    FOR    ${arg}    IN    @{extra_args}
+        Call Method    ${options}    add_argument    ${arg}
+    END
+    Create WebDriver    Chrome    options=${options}    alias=${alias}
+    Go To    ${url}
+
+Open Browser Locally With Unique Profile
     [Arguments]    ${url}    ${alias}
     ${uuid}=    Generate Random String    8
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
@@ -12,7 +41,7 @@ Open Browser With Unique Profile
     Create WebDriver    Chrome    options=${options}    alias=${alias}
     Go To    ${url}
 
-Open Incognito Browser With Unique Profile
+Open Incognito Browser Locally With Unique Profile
     [Arguments]    ${url}    ${alias}
     ${uuid}=    Generate Random String    8
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys

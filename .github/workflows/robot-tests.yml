@@ -14,15 +14,29 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: Install Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
 
-    - name: Install Robot Framework and dependencies
+    - name: Install Google Chrome
+      run: |
+        sudo apt update
+        sudo apt install -y google-chrome-stable
+
+    - name: Install dependencies
       run: |
         pip install robotframework selenium robotframework-seleniumlibrary
 
-    - name: Run Robot Tests
+    - name: Run Robot Framework tests
       run: |
         robot CriticalFlows
+
+    - name: Upload Robot Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: RobotReports
+        path: |
+          log.html
+          report.html
+          output.xml
