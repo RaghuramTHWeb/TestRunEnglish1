@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-07-24T08:19:11.221811" rpa="false" schemaversion="5">
+<suite id="s1" name="PauseDelete" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\Tests\PauseDelete.robot">
+<test id="s1-t1" name="Check Pause Functionality" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:11.339442" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-07-24T08:19:11.339442" elapsed="4.519508"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-07-24T08:19:15.858950" elapsed="0.023276"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@class='Login-module__signup-text css-0']</arg>
+<arg>8s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-24T08:19:15.882226" elapsed="1.922963"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:20.806633" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:17.806153" elapsed="3.000480"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:20.810629" level="INFO">Clicking element 'xpath=//div[@class='Login-module__signup-text css-0']'.</msg>
+<arg>xpath=//div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:20.809631" elapsed="0.064793"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:23.874886" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:20.874424" elapsed="3.000462"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>8s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-24T08:19:23.874886" elapsed="0.012761"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:26.889499" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:23.888950" elapsed="3.000549"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:26.893794" level="INFO">Typing text 'raghuram.m+rp1@taskhuman.com' into text field 'id:field-:r0:'.</msg>
+<arg>id:field-:r0:</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:26.892795" elapsed="0.132581"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:27.025376" level="INFO">Typing text 'asdfgh@12345A' into text field 'id:field-:r1:'.</msg>
+<arg>id:field-:r1:</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:27.025376" elapsed="0.076178"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:27.101554" level="INFO">Clicking element 'xpath=//button[@value='submit']'.</msg>
+<arg>xpath=//button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:27.101554" elapsed="0.023113"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:29.125114" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:27.124667" elapsed="2.000447"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()="${ONLINE_TEXT}"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-07-24T08:19:29.127527" elapsed="2.195925"/>
+</kw>
+<msg time="2024-07-24T08:19:31.323452" level="INFO">${online_status_present} = True</msg>
+<var>${online_status_present}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//*[text()="${ONLINE_TEXT}"]</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-24T08:19:29.127527" elapsed="2.195925"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:36.526195" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-581.png"&gt;&lt;img src="selenium-screenshot-581.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-07-24T08:19:36.527240" level="FAIL">Element 'xpath=//*[text()="You're offline now!"]' did not appear in 5 seconds.</msg>
+<arg>xpath=//*[text()="${OFFLINE_TEXT}"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2024-07-24T08:19:31.323452" elapsed="5.203788">Element 'xpath=//*[text()="You're offline now!"]' did not appear in 5 seconds.</status>
+</kw>
+<msg time="2024-07-24T08:19:36.527240" level="INFO">${offline_status_present} = False</msg>
+<var>${offline_status_present}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//*[text()="${OFFLINE_TEXT}"]</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-07-24T08:19:31.323452" elapsed="5.203788"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${offline_status_present}</arg>
+<arg>Make Online And Verify Pause Functionality</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-24T08:19:36.528678" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Verify Pause Functionality">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()="Pause"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-24T08:19:36.529556" elapsed="0.014223"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:36.543779" level="INFO">Clicking element 'xpath=//*[text()="Pause"]'.</msg>
+<arg>xpath=//*[text()="Pause"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:36.543779" elapsed="0.072812"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:41.617028" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:36.616591" elapsed="5.000437"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()="Take a break. You deserve it!"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-07-24T08:19:41.617028" elapsed="0.008653"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:46.627204" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:41.625681" elapsed="5.001523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()="Continue"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-24T08:19:46.627204" elapsed="0.021019"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:46.648223" level="INFO">Clicking element 'xpath=//*[text()="Continue"]'.</msg>
+<arg>xpath=//*[text()="Continue"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:46.648223" elapsed="0.027106"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:51.675801" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:46.675329" elapsed="5.000472"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()="Continue"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-07-24T08:19:51.675801" elapsed="0.021946"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-07-24T08:19:51.698753" level="INFO">Clicking element 'xpath=//*[text()="Continue"]'.</msg>
+<arg>xpath=//*[text()="Continue"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-07-24T08:19:51.697747" elapsed="0.035544"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-07-24T08:19:56.734552" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-07-24T08:19:51.734288" elapsed="5.000264"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()="${OFFLINE_TEXT}"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-07-24T08:19:56.734552" elapsed="0.021304"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-07-24T08:19:56.755856" elapsed="2.291607"/>
+</kw>
+<status status="PASS" start="2024-07-24T08:19:36.529556" elapsed="22.517907"/>
+</kw>
+<arg>${online_status_present}</arg>
+<arg>Verify Pause Functionality</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-07-24T08:19:36.529556" elapsed="22.517907"/>
+</kw>
+<status status="PASS" start="2024-07-24T08:19:11.339442" elapsed="47.708021"/>
+</test>
+<status status="PASS" start="2024-07-24T08:19:11.221811" elapsed="47.825652"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="PauseDelete">PauseDelete</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

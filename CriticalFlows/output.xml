@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.4 on win32)" generated="2025-03-07T07:24:17.470970" rpa="false" schemaversion="5">
+<suite id="s1" name="H&amp;R &amp; TC01 CallConnectivity &amp; TC02 BookFromProviderAvailabiltyCalander &amp; TC03 BookingE2EFinal &amp; TC04 Login&amp;Logout &amp; TC05 BookingThroughSearchOffline &amp; TC06 BookingE2EInternalUser &amp; TC07 BookingFromProviderAvailabilityCalanderINTERNALUSER &amp; TC08 10minsCallandExtend &amp; TC09 CallThroughSearchResults &amp; TC10 BookingInstructions">
+<suite id="s1-s1" name="H&amp;R" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\criticalflows\H&amp;R.robot">
+<test id="s1-s1-t1" name="Open the browser and login as Consumer" line="12">
+<kw name="Login As Consumer" owner="Reboot_Consumer_login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:17.741219" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T07:24:17.741219" elapsed="4.980551"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-03-07T07:24:22.721770" elapsed="0.054808"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-07T07:24:22.776578" elapsed="2.225716"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:25.002294" level="INFO">Clicking element 'xpath://div[@class='Login-module__signup-text css-0']'.</msg>
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-07T07:24:25.002294" elapsed="0.105741"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:35.425568" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-03-07T07:24:35.425568" level="FAIL">Element 'id:field-:r0:' not visible after 10 seconds.</msg>
+<arg>id:field-:r0:</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-07T07:24:25.108035" elapsed="10.319280">Element 'id:field-:r0:' not visible after 10 seconds.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:35.427315" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r1:</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:35.427315" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:35.427315" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:35.427315" elapsed="0.000000"/>
+</kw>
+<arg>${consumer_email}</arg>
+<arg>${consumer_password}</arg>
+<status status="FAIL" start="2025-03-07T07:24:17.741219" elapsed="17.686096">Element 'id:field-:r0:' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:17.741219" elapsed="17.686096">Element 'id:field-:r0:' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s1-t2" name="Check How Booking work is clickable" line="14">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:35.427315" level="INFO">Opening url 'https://app-dev.taskhuman.com/bookings'</msg>
+<arg>https://app-dev.taskhuman.com/bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-03-07T07:24:35.427315" elapsed="2.003053"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-03-07T07:24:37.430368" elapsed="1.801702"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:41.238512" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:41.238512" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<arg>xpath=//p[@class='chakra-text BookingRouteCss-module__BookingWork--Text css-0']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-07T07:24:39.232070" elapsed="2.122102">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//p[@class='chakra-text BookingRouteCss-module__BookingWork--Text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.354172" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.354172" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:35.427315" elapsed="5.926857">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</test>
+<test id="s1-s1-t3" name="Validate if 3 instructions are visible" line="20">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:41.371234" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:41.376655" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<arg>xpath=//div[contains(text(), 'Open the app at the time of your session to call your coach.')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-07T07:24:41.364050" elapsed="0.014695">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>xpath=//div[contains(text(), 'Open the app at the time of your session to call your coach.')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.378745" elapsed="0.002011"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${Expected Inst01}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.380756" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.380756" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(text(), 'Cancel any time without penalty before the session starts.')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.380756" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>xpath=//div[contains(text(), 'Cancel any time without penalty before the session starts.')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.384720" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${Expected Inst02}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.384720" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.386735" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(text(), 'If the coach doesn’t pick up the call, your minutes will be credited back to your account.')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.386735" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${actual_text}</var>
+<arg>xpath=//div[contains(text(), 'If the coach doesn’t pick up the call, your minutes will be credited back to your account.')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.388747" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${Expected Inst03}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.390758" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.390758" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Got It!']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.390758" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Got It!']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.390758" elapsed="0.002009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.392767" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:41.394777" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:41.360204" elapsed="0.034573">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</test>
+<status status="FAIL" start="2025-03-07T07:24:17.518124" elapsed="23.879357"/>
+</suite>
+<suite id="s1-s2" name="TC01 CallConnectivity" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\criticalflows\TC01_CallConnectivity.robot">
+<test id="s1-s2-t1" name="Open and Position Browsers" line="96">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:41.417538" level="INFO">Opening browser 'Chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>Chrome</arg>
+<arg>alias=NORM</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-07T07:24:41.417538" elapsed="4.143405"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>650</arg>
+<arg>1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-03-07T07:24:45.562957" elapsed="0.023013"/>
+</kw>
+<kw name="Set Window Position" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:45.598965" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.601774" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<arg>0</arg>
+<arg>0</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.587981" elapsed="0.071619">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Normal browser size and position set.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.661991" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>Chrome</arg>
+<arg>alias=INC</arg>
+<arg>options=add_argument("--incognito")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.671535" elapsed="0.000509"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>650</arg>
+<arg>1200</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.683751" elapsed="0.000000"/>
+</kw>
+<kw name="Set Window Position" owner="SeleniumLibrary">
+<arg>650</arg>
+<arg>0</arg>
+<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.689793" elapsed="0.002524"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Incognito browser size and position set.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.694044" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:41.417538" elapsed="4.277771">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</test>
+<test id="s1-s2-t2" name="Login as Provider in Incognito Mode" line="110">
+<kw name="Login as Provider in Incognito">
+<kw name="Switch Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:45.717570" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.720023" level="FAIL">No browser with index or alias 'INC' found.</msg>
+<arg>INC</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.710627" elapsed="0.082036">No browser with index or alias 'INC' found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://input[@id='field-:r0:']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>${PROVIDER_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://input[@id='field-:r1:']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r1:</arg>
+<arg>${PROVIDER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${online_status_present}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//*[text()="${ONLINE_TEXT}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${offline_status_present}</var>
+<arg>Wait Until Page Contains Element</arg>
+<arg>xpath=//*[text()="${OFFLINE_TEXT}"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${offline_status_present}</arg>
+<arg>Make Online</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${online_status_present}</arg>
+<arg>Provider is Online</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.792663" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.709455" elapsed="0.083208">No browser with index or alias 'INC' found.</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.706829" elapsed="0.085834">No browser with index or alias 'INC' found.</status>
+</test>
+<test id="s1-s2-t3" name="Login as Consumer in Normal Mode" line="114">
+<kw name="Login as Consumer">
+<kw name="Switch Browser" owner="SeleniumLibrary">
+<arg>NORM</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="PASS" start="2025-03-07T07:24:45.801685" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:45.807862" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.810216" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.803853" elapsed="0.008452">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.812305" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.812305" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.812305" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>8s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.814376" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://input[@id='field-:r0:']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.814376" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>${CONSUMER_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.814376" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.814376" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://input[@id='field-:r1:']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.814376" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r1:</arg>
+<arg>${CONSUMER_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.814376" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.816382" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.816382" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.816939" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.801685" elapsed="0.015254">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.801138" elapsed="0.016809">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</test>
+<test id="s1-s2-t4" name="Goto Provider Profile and make online if found offline" line="118">
+<kw name="Goto Provider Profile">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:45.821966" level="INFO">Opening url 'https://app-dev.taskhuman.com/profile/5466'</msg>
+<msg time="2025-03-07T07:24:45.826090" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.826090" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<arg>https://app-dev.taskhuman.com/profile/5466</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.821966" elapsed="0.009904">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.831870" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.821966" elapsed="0.011914">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.819956" elapsed="0.013924">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</test>
+<test id="s1-s2-t5" name="Call Provider" line="122">
+<kw name="Call Provider">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:45.842186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.842186" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<arg>xpath://div[@class='ActionMenu-module__ActionMenu--List css-0']//img[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.837629" elapsed="0.009803">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[@class='ActionMenu-module__ActionMenu--List css-0']//img[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.847432" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'CallForm-module__CallForm--ContinueCall__Skill') and contains(@class, 'css-0') and text()='AK skill']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'CallForm-module__CallForm--ContinueCall__Skill') and contains(@class, 'css-0') and text()='AK skill']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Next']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Next']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Connect Now']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.850430" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.837002" elapsed="0.013428">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.833880" elapsed="0.016550">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</status>
+</test>
+<test id="s1-s2-t6" name="Accept Call as Provider and wait insession for 1m and end the call" line="126">
+<kw name="Accept Call as Provider in Incognito">
+<kw name="Switch Browser" owner="SeleniumLibrary">
+<msg time="2025-03-07T07:24:45.859015" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.859015" level="FAIL">No browser with index or alias 'INC' found.</msg>
+<arg>INC</arg>
+<doc>Switches between active browsers using ``index_or_alias``.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.850430" elapsed="0.008585">No browser with index or alias 'INC' found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Accept']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Accept']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>50s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Got It!']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Got It!']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://img[4]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://img[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.859015" elapsed="0.006128"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-03-07T07:24:45.865143" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.850430" elapsed="0.014713">No browser with index or alias 'INC' found.</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:45.850430" elapsed="0.014713">No browser with index or alias 'INC' found.</status>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-03-07T07:24:50.135431" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
+<msg time="2025-03-07T07:24:52.302053" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-07T07:24:52.302053" level="INFO">Exception ignored in: &lt;function Service.__del__ at 0x00000193F584A020&gt;
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\service.py", line 189, in __del__
+    self.stop()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\service.py", line 146, in stop
+    self.send_remote_shutdown_command()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\selenium\webdriver\common\service.py", line 126, in send_remote_shutdown_command
+    request.urlopen(f"{self.service_url}/shutdown")
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 215, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 515, in open
+    response = self._open(req, data)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 532, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 492, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1373, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\urllib\request.py", line 1344, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1336, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1382, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1331, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1091, in _send_output
+    self.send(msg)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1035, in send
+    self.connect()
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\http\client.py", line 1001, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 845, in create_connection
+    exceptions.clear()  # raise only the last error
+    ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python312\Lib\site-packages\robot\running\signalhandler.py", line 37, in __call__
+    raise SystemExit()
+SystemExit:</msg>
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="FAIL" start="2025-03-07T07:24:45.868892" elapsed="6.436594">Execution terminated by signal</status>
+</kw>
+<status status="FAIL" start="2025-03-07T07:24:41.405250" elapsed="10.900236">Suite teardown failed:
+Execution terminated by signal</status>
+</suite>
+<suite id="s1-s3" name="TC02 BookFromProviderAvailabiltyCalander" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\criticalflows\TC02_BookFromProviderAvailabiltyCalander.robot">
+<test id="s1-s3-t1" name="Open the browser and login as Consumer" line="11">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.307495" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t2" name="Check months are scrollable left to right and vice versa" line="24">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.307495" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t3" name="Check if available date tapped/selected by consumer should show available time slots" line="53">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.313953" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t4" name="Check if time slot clicked offering option to book a call" line="57">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.313953" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t5" name="Check if call booked its showing animation under bookings with me" line="60">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.313953" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s3-t6" name="Checking if booking in Our bookings and delete" line="76">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.313953" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2025-03-07T07:24:52.307495" elapsed="0.015055"/>
+</suite>
+<suite id="s1-s4" name="TC03 BookingE2EFinal" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\criticalflows\TC03_BookingE2EFinal.robot">
+<test id="s1-s4-t1" name="Open and Position Browsers" line="14">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.322550" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t2" name="Login as Provider in Incognito" line="17">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.322550" elapsed="0.007894">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t3" name="Check Provider Online Status" line="20">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.330444" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t4" name="Login as Consumer" line="23">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.330444" elapsed="0.002008">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t5" name="Goto provider profile and book a session" line="26">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.332452" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t6" name="Check if booking is available in Our bookings section" line="29">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.332452" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t7" name="Check if booking is listed under provider" line="32">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-03-07T07:24:52.332452" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s4-t8" name="Validate if booking can be rescheduled to tomorrow" line="35">
+<errors>
+<msg time="2025-03-07T07:24:41.238512" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:41.371234" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.598965" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.717570" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.807862" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.826090" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.842186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:45.859015" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=133.0.6943.142)
+Stacktrace:
+	GetHandleVerifier [0x00007FF68673C6A5+28789]
+	(No symbol) [0x00007FF6866A5B20]
+	(No symbol) [0x00007FF686538F9A]
+	(No symbol) [0x00007FF686511563]
+	(No symbol) [0x00007FF6865BEF1E]
+	(No symbol) [0x00007FF6865DF0D2]
+	(No symbol) [0x00007FF6865B7103]
+	(No symbol) [0x00007FF68657FFC0]
+	(No symbol) [0x00007FF686581273]
+	GetHandleVerifier [0x00007FF686A81AED+3458237]
+	GetHandleVerifier [0x00007FF686A9829C+3550316]
+	GetHandleVerifier [0x00007FF686A8DB9D+3507565]
+	GetHandleVerifier [0x00007FF686802C6A+841274]
+	(No symbol) [0x00007FF6866B09EF]
+	(No symbol) [0x00007FF6866ACB34]
+	(No symbol) [0x00007FF6866ACCD6]
+	(No symbol) [0x00007FF68669C119]
+	BaseThreadInitThunk [0x00007FF8FE11E8D7+23]
+	RtlUserThreadStart [0x00007FF8FF69BF2C+44]
+</msg>
+<msg time="2025-03-07T07:24:50.135431" level="ERROR">When closing browser, received exception: Execution terminated by signal</msg>
+<msg time="2025-03-07T07:24:52.338101" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>

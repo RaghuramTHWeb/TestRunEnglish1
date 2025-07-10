@@ -1,0 +1,155 @@
+*** Settings ***
+Library    SeleniumLibrary
+Resource    ../Common_Resources/PreloginArabicSelection.robot
+Suite Teardown    Close All Browsers
+
+*** Variables ***
+${ONLINE_TEXT}         You're now online!
+${OFFLINE_TEXT}        You're offline now!
+${PROVIDER_EMAIL}      raghuram.m+rp1@taskhuman.com
+${PROVIDER_PASSWORD}   asdfgh@12345A
+${CONSUMER_EMAIL}      raghuram.m+rc1@taskhuman.com
+${CONSUMER_PASSWORD}   asdfgh@12345Q
+${PROVIDER_PROFILE_URL}    https://app-dev.taskhuman.com/profile/5466/about
+
+*** Test Cases ***
+
+Open and Position Browsers
+    Open First Browser
+    Open Second Browser
+
+Login as Provider in Incognito
+    Switch to Incognito Browser
+    Login as Provider
+    Ensure Provider is Online
+
+Login as Consumer
+    Switch to Normal Browser
+    Ensure Arabic Language Selected
+    Login as Consumer
+
+Search for Provider and Call
+    Search for Provider
+    Select Call Topic and Place Call
+
+Accept Call as Provider in Incognito
+    Switch to Incognito Browser
+    Accept Call
+    End Call
+
+*** Keywords ***
+
+Open First Browser
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
+    Set Window Size    650    1200
+    Set Window Position    0    0
+    Log    Normal browser size and position set.
+
+Open Second Browser
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
+    Set Window Size    650    1200
+    Set Window Position    650    0
+    Log    Incognito browser size and position set.
+
+Switch to Incognito Browser
+    Switch Browser    INC
+
+Switch to Normal Browser
+    Switch Browser    NORM
+
+Login as Provider
+    Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
+    #Sleep    5s
+    Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
+    Click Element    xpath://div[@class='Login-module__signup-text css-0']
+    Wait Until Element Is Visible    xpath=//input[@name='email']    10s
+    #Sleep    4s
+    Wait Until Element Is Visible    xpath=//input[@name='email']    10s
+    Click Element    xpath=//input[@name='email']
+    Input Text    xpath=//input[@name='email']    ${PROVIDER_EMAIL}
+    #Sleep    5s
+    Wait Until Element Is Visible    xpath=//input[@name='password']    10s
+    Click Element        xpath=//input[@name='password']
+    Input Text        xpath=//input[@name='password']    ${PROVIDER_PASSWORD}
+    #Sleep    5s
+    Wait Until Element Is Visible     xpath://button[@value='submit']    10s
+    Click Element    xpath://button[@value='submit']
+    Sleep    3s
+
+Ensure Provider is Online
+    ${online_status_present}=    Run Keyword And Return Status    Wait Until Page Contains Element    xpath=//*[text()="${ONLINE_TEXT}"]    10s
+    ${offline_status_present}=   Run Keyword And Return Status    Wait Until Page Contains Element    xpath=//*[text()="${OFFLINE_TEXT}"]    10s
+
+    Run Keyword If    ${offline_status_present}    Make Online
+    Run Keyword If    ${online_status_present}     Provider is Online
+
+Make Online
+    Wait Until Element Is Visible    xpath=//button[@id='go_online_now']    10s
+    Click Element    xpath=//button[@id='go_online_now']
+    Sleep    5s
+    Click Element    xpath://button[text()='Save']
+    Sleep    5s
+
+Provider is Online
+    Log    Provider is now online.
+    Sleep    5s
+
+Login as Consumer
+    Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
+    Click Element    xpath://div[@class='Login-module__signup-text css-0']
+    Wait Until Element Is Visible    xpath=//input[@name='email']    10s
+    Click Element    xpath=//input[@name='email']
+    Input Text    xpath=//input[@name='email']    ${CONSUMER_EMAIL}
+    Wait Until Element Is Visible    xpath=//input[@name='password']    10s
+    Click Element    xpath=//input[@name='password']
+    Input Text    xpath=//input[@name='password']    ${CONSUMER_PASSWORD}
+    Wait Until Element Is Visible    xpath://button[@value='submit']    10s
+    Click Element    xpath://button[@value='submit']
+    Sleep    3s
+
+Search for Provider
+    Go To    https://app-dev.taskhuman.com/search/name/%D8%B1%D8%A7%D8%BA%D9%88%20%D9%83%D8%A8%D8%B4
+    Wait Until Element Is Visible    xpath=//div[@data-testid="action_menu_call_btn"]    10s
+    Click Element    xpath=//div[@data-testid="action_menu_call_btn"]
+    #Sleep    3s
+    #Scroll Element Into View    xpath=//div[contains(@class, 'ActionMenu-module__ActionMenu--Search--Box') and contains(., 'Call')]
+    #Wait Until Element Is Visible    xpath=//div[contains(@class, 'ActionMenu-module__ActionMenu--Search--Box') and contains(., 'Call')]    10s
+    #Click Element    xpath=//div[contains(@class, 'ActionMenu-module__ActionMenu--Search--Box') and contains(., 'Call')]
+    Sleep    5s
+
+Select Call Topic and Place Call
+   # Wait Until Page Contains Element    xpath://*[text()='Select a Topic']    4s
+    Wait Until Element Is Visible    xpath=(//span[contains(@class, 'SkillsModalContent-module__SkillsList__Skill')])[1]    10s
+    Click Element    xpath=(//span[contains(@class, 'SkillsModalContent-module__SkillsList__Skill')])[1]
+    Wait Until Element Is Visible    xpath=//button[@data-testid="next_btn"]    10s
+    Click Element                    xpath=//button[@data-testid="next_btn"]
+    Decrement Time Until 10 Minutes
+
+Decrement Time Until 10 Minutes
+    Wait Until Element Is Visible    id=time-decreament-icon    10s
+    WHILE    True
+        ${current_value}=    Get Element Attribute    xpath=//input[@class="chakra-input css-1cjy4zv"]    value
+        Run Keyword If    ${current_value} == 10    Exit For Loop
+        Click Element    id=time-decreament-icon
+        Sleep    1s
+    END
+    Wait Until Element Is Visible    xpath=//button[@data-testid="next_btn"]    10s
+    Click Element                    xpath=//button[@data-testid="next_btn"]
+    Wait Until Element Is Visible    xpath=//button[@data-testid="next_btn"]    10s
+    Click Element                    xpath=//button[@data-testid="next_btn"]
+    #Click Element    xpath://*[text()='Connect Now']
+    Sleep    5s
+
+Accept Call
+    Wait Until Element Is Visible    xpath://*[text()='Accept']
+    Click Element    xpath://*[text()='Accept']
+    Sleep    30s
+    Wait Until Element Is Visible    xpath://*[text()='Got It!']
+    Click Element    xpath://*[text()='Got It!']
+
+End Call
+    #Wait Until Element Is Visible    xpath://img[4]  # Call ending button
+    #Click Element    xpath://img[4]
+    Wait Until Element Is Visible    (//button[@aria-label="End Call"])[last()]    5s
+    Click Element    (//button[@aria-label="End Call"])[last()]
+    Sleep    5s

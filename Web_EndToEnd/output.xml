@@ -1,0 +1,2801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.4 on win32)" generated="2025-01-14T12:33:02.305108" rpa="false" schemaversion="5">
+<suite id="s1" name="TC01 Pre Login Page &amp; TC02 During login &amp; TC03 Post login &amp; TC04 Settings Page &amp; TC05 SearchModule &amp; TC06 BookingModule &amp; TC07 Message &amp; Concierge &amp; TC08 CoachProfile &amp; TC09 LibraryModule &amp; TC10 As a Provider">
+<suite id="s1-s1" name="TC01 Pre Login Page" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\Web_EndToEnd\TC01_Pre_Login Page.robot">
+<test id="s1-s1-t1" name="Validate Page content/UI on Login page" line="9">
+<kw name="Validate Title,Text,TH image,TH logo visibility">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:02.432570" level="INFO">Opening browser 'Chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>${Url}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:02.416739" elapsed="5.085753"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-14T12:33:07.502492" elapsed="0.032791"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "Login-module__login__img--Title")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:07.536058" elapsed="1.702866"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:09.254467" level="INFO">Element 'xpath=//div[contains(@class, "Login-module__login__img--Title")]' is displayed.</msg>
+<arg>xpath=//div[contains(@class, "Login-module__login__img--Title")]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.238924" elapsed="0.015543"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "Login-module__login__img--Header") and contains(., "Human Guidance At Your Fingertips")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.254467" elapsed="0.015623"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:09.270090" level="INFO">Verifying element 'xpath=//div[contains(@class, "Login-module__login__img--Header") and contains(., "Human Guidance At Your Fingertips")]' contains exact text 'Human Guidance At Your Fingertips'.</msg>
+<arg>xpath=//div[contains(@class, "Login-module__login__img--Header") and contains(., "Human Guidance At Your Fingertips")]</arg>
+<arg>Human Guidance At Your Fingertips</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.270090" elapsed="0.001502"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@src="/d5190f396ac40361f44a.svg"]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.271592" elapsed="0.014503"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:09.286095" level="INFO">Element 'xpath=//img[@src="/d5190f396ac40361f44a.svg"]' is displayed.</msg>
+<arg>xpath=//img[@src="/d5190f396ac40361f44a.svg"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.286095" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//img[@src="/d3c98eb31fd89ce7a99d.svg" and contains(@class, "Login-module__login__logo")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.286095" elapsed="0.016034"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:09.302129" level="INFO">Element 'xpath=//img[@src="/d3c98eb31fd89ce7a99d.svg" and contains(@class, "Login-module__login__logo")]' is displayed.</msg>
+<arg>xpath=//img[@src="/d3c98eb31fd89ce7a99d.svg" and contains(@class, "Login-module__login__logo")]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.302129" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:11.302365" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:09.302129" elapsed="2.000236"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:02.416739" elapsed="8.885626"/>
+</kw>
+<kw name="Validate signup,login, Footer content are visible on login page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class, "Login-module__email_signin_btn")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.302365" elapsed="0.010519"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:11.312884" level="INFO">Element 'xpath=//button[contains(@class, "Login-module__email_signin_btn")]' is displayed.</msg>
+<arg>xpath=//button[contains(@class, "Login-module__email_signin_btn")]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.312884" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "Login-module__signin__option--text") and contains(., "Already have an account?") and .//div[text()="Login"]]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.312884" elapsed="0.015738"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:11.328622" level="INFO">Element 'xpath=//div[contains(@class, "Login-module__signin__option--text") and contains(., "Already have an account?") and .//div[text()="Login"]]' is displayed.</msg>
+<arg>xpath=//div[contains(@class, "Login-module__signin__option--text") and contains(., "Already have an account?") and .//div[text()="Login"]]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.328622" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "Login-module__login__condition--text") and contains(., "By continuing, I agree to TaskHuman’s") and .//a[contains(@href, "terms-conditions") and contains(text(), "Terms &amp; Conditions")] and .//a[contains(@href, "privacy-policy") and contains(text(), "Privacy Policy")]]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.344253" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:11.344253" level="INFO">Element 'xpath=//div[contains(@class, "Login-module__login__condition--text") and contains(., "By continuing, I agree to TaskHuman’s") and .//a[contains(@href, "terms-conditions") and contains(text(), "Terms &amp; Conditions")] and .//a[contains(@href, "privacy-policy") and contains(text(), "Privacy Policy")]]' is displayed.</msg>
+<arg>xpath=//div[contains(@class, "Login-module__login__condition--text") and contains(., "By continuing, I agree to TaskHuman’s") and .//a[contains(@href, "terms-conditions") and contains(text(), "Terms &amp; Conditions")] and .//a[contains(@href, "privacy-policy") and contains(text(), "Privacy Policy")]]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.344253" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:13.344800" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:11.344253" elapsed="2.000547"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:11.302365" elapsed="2.042435"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:02.416739" elapsed="10.928061"/>
+</test>
+<test id="s1-s1-t2" name="Validate login modules(Facebook, google, Apple, Microsoft) are available on login page" line="13">
+<kw name="Validate login options visible on login page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=googleOauthButton</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.344800" elapsed="0.015633"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:13.376055" level="INFO">Element 'id=googleOauthButton' is displayed.</msg>
+<arg>id=googleOauthButton</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.360433" elapsed="0.015622"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "Oauth-module__facebook-btn")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.376055" elapsed="0.005004"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:13.392062" level="INFO">Element 'xpath=//div[contains(@class, "Oauth-module__facebook-btn")]' is displayed.</msg>
+<arg>xpath=//div[contains(@class, "Oauth-module__facebook-btn")]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.381059" elapsed="0.011003"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, "Oauth-module__apple-btn")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.392062" elapsed="0.000000"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:13.407702" level="INFO">Element 'xpath=//div[contains(@class, "Oauth-module__apple-btn")]' is displayed.</msg>
+<arg>xpath=//div[contains(@class, "Oauth-module__apple-btn")]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.407702" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:15.407912" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:13.407702" elapsed="2.000210"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:13.344800" elapsed="2.063112"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:13.344800" elapsed="2.063112"/>
+</test>
+<test id="s1-s1-t3" name="Validate 'signup' redirection till user navigated to Mobile number verification" line="16">
+<kw name="Validate 'signup' redirection till user navigated to Mobile number verification">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:15.407912" level="INFO">Opening url 'https://app-dev.taskhuman.com/login'</msg>
+<arg>${Url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:15.407912" elapsed="0.468052"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class, "Login-module__email_signin_btn")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:15.875964" elapsed="0.033255"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:15.909852" level="INFO">Clicking element 'xpath=//button[contains(@class, "Login-module__email_signin_btn")]'.</msg>
+<arg>xpath=//button[contains(@class, "Login-module__email_signin_btn")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:15.909852" elapsed="0.075562"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://app-dev.taskhuman.com/signup</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-01-14T12:33:15.985414" elapsed="0.009025"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:15.997439" level="INFO">Current location is 'https://app-dev.taskhuman.com/signup'.</msg>
+<arg>https://app-dev.taskhuman.com/signup</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:15.994439" elapsed="0.003000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=firstName</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:15.997439" elapsed="0.028975"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:16.026414" level="INFO">Typing text 'Test' into text field 'id=firstName'.</msg>
+<arg>id=firstName</arg>
+<arg>Test</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.026414" elapsed="0.069750"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=lastName</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.096164" elapsed="0.012668"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:16.108832" level="INFO">Typing text 'Automation' into text field 'id=lastName'.</msg>
+<arg>id=lastName</arg>
+<arg>Automation</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.108832" elapsed="0.083775"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.192607" elapsed="0.000000"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>id=email</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.192607" elapsed="0.038309"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:16.230916" level="INFO">Typing text 'testautomation@taskhuman.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>testautomation@taskhuman.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.230916" elapsed="0.155374"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.386290" elapsed="0.005491"/>
+</kw>
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.391781" elapsed="0.033405"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:16.425186" level="INFO">Typing text 'asd@123Q' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>asd@123Q</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.425186" elapsed="0.086157"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:18.511732" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:16.511343" elapsed="2.000389"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class, "SignupForm-module__SignupForm__button--continue")]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:18.511732" elapsed="0.019797"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class, "SignupForm-module__SignupForm__button--cancel") and text()="Cancel"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:18.531529" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:18.531529" level="INFO">Clicking element 'xpath=//button[contains(@class, "SignupForm-module__SignupForm__button--cancel") and text()="Cancel"]'.</msg>
+<arg>xpath=//button[contains(@class, "SignupForm-module__SignupForm__button--cancel") and text()="Cancel"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:18.531529" elapsed="0.067191"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:21.599367" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:18.598720" elapsed="3.000647"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:15.407912" elapsed="6.192040"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:15.407912" elapsed="6.192040"/>
+</test>
+<test id="s1-s1-t4" name="Before login_ Validate redirection of terms and conditions, Privacy Policy on Pre-login page" line="19">
+<kw name="Validate 'Terms &amp; Conditions' link and content on login page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(@href, "terms-conditions")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:21.599952" elapsed="0.019802"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:21.619754" level="INFO">Clicking element 'xpath=//a[contains(@href, "terms-conditions")]'.</msg>
+<arg>xpath=//a[contains(@href, "terms-conditions")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:21.619754" elapsed="0.062615"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:24.682587" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:21.682369" elapsed="3.000218"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:24.682587" elapsed="0.062624"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:27.746802" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:24.746225" elapsed="3.000577"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/terms-conditions/</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-01-14T12:33:27.746802" elapsed="0.003529"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:27.757861" level="INFO">Current location is 'https://taskhuman.com/terms-conditions/'.</msg>
+<arg>https://taskhuman.com/terms-conditions/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:27.750331" elapsed="0.007530"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:21.599952" elapsed="6.157909"/>
+</kw>
+<kw name="Validate 'Privacy Policy' link and content on login page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:27.757861" level="INFO">Opening url 'https://app-dev.taskhuman.com/login'</msg>
+<arg>${Url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:27.757861" elapsed="0.406028"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-14T12:33:28.165393" elapsed="0.004007"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(@href, "privacy-policy")]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:28.169400" elapsed="0.016044"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:28.185444" level="INFO">Clicking element 'xpath=//a[contains(@href, "privacy-policy")]'.</msg>
+<arg>xpath=//a[contains(@href, "privacy-policy")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:28.185444" elapsed="0.147312"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:31.334492" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:28.332756" elapsed="3.001736"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:31.335029" elapsed="0.016619"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:34.352512" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:31.351648" elapsed="3.000864"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/privacy-policy/</arg>
+<arg>5s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-01-14T12:33:34.352512" elapsed="0.007737"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:34.368014" level="INFO">Current location is 'https://taskhuman.com/privacy-policy/'.</msg>
+<arg>https://taskhuman.com/privacy-policy/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:34.364924" elapsed="0.003090"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:37.368367" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:34.368014" elapsed="3.000353"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:27.757861" elapsed="9.610506"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:21.599952" elapsed="15.768415"/>
+</test>
+<status status="PASS" start="2025-01-14T12:33:02.321178" elapsed="35.047189"/>
+</suite>
+<suite id="s1-s2" name="TC02 During login" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\Web_EndToEnd\TC02_During_login.robot">
+<test id="s1-s2-t1" name="During Login_ Validate Back and Login (With Email and Password) functionality" line="10">
+<kw name="During Login_ Validate Back and Login (With Email and Password) functionality">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:37.375527" level="INFO">Opening url 'https://app-dev.taskhuman.com/login?type=form'</msg>
+<arg>https://app-dev.taskhuman.com/login?type=form</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:37.375527" elapsed="0.624063"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=button.LoginForm-module__FormButtons--cancel</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:38.000590" elapsed="0.014509"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:38.015099" level="INFO">Clicking element 'css=button.LoginForm-module__FormButtons--cancel'.</msg>
+<arg>css=button.LoginForm-module__FormButtons--cancel</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:38.015099" elapsed="0.100585"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="PASS" start="2025-01-14T12:33:38.115684" elapsed="0.021218"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:38.138900" level="INFO">Current location is 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:38.136902" elapsed="0.001998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:40.139456" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:38.138900" elapsed="2.000556"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:37.375527" elapsed="2.763929"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:37.375527" elapsed="2.763929"/>
+</test>
+<test id="s1-s2-t2" name="During Login_ Validate Forget Password functionality (Change and login) and then cancel when trying to request password" line="12">
+<kw name="validate if user is able to click on forget password and then cancel">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:40.139456" level="INFO">Opening url 'https://app-dev.taskhuman.com/login?type=form'</msg>
+<arg>https://app-dev.taskhuman.com/login?type=form</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:40.139456" elapsed="0.334731"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=p.chakra-text.css-0</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:40.474187" elapsed="0.027935"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:40.503122" level="INFO">Clicking element 'css=p.chakra-text.css-0'.</msg>
+<arg>css=p.chakra-text.css-0</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:40.502122" elapsed="0.078092"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[contains(@class, "EmailVerification-module__VerificationForm__button--cancel")]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:40.580214" elapsed="0.422454"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:41.002668" level="INFO">Clicking element 'xpath=//button[contains(@class, "EmailVerification-module__VerificationForm__button--cancel")]'.</msg>
+<arg>xpath=//button[contains(@class, "EmailVerification-module__VerificationForm__button--cancel")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:41.002668" elapsed="0.042576"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:33:43.045919" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:41.045244" elapsed="2.000675"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:40.139456" elapsed="2.906463"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:40.139456" elapsed="2.906463"/>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-01-14T12:33:43.068626" elapsed="6.280320"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:37.368367" elapsed="11.980579"/>
+</suite>
+<suite id="s1-s3" name="TC03 Post login" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\Web_EndToEnd\TC03_Post_login.robot">
+<test id="s1-s3-t1" name="Open the browser and login as Consumer" line="10">
+<kw name="Login As Consumer" owner="Reboot_Consumer_login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:49.391784" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:33:49.391784" elapsed="4.666871"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-14T12:33:54.058655" elapsed="0.024181"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:54.082836" elapsed="1.712251"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:55.795087" level="INFO">Clicking element 'xpath://div[@class='Login-module__signup-text css-0']'.</msg>
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:55.795087" elapsed="0.068338"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:33:55.863425" elapsed="0.018010"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:55.881435" level="INFO">Typing text 'raghuram.m+rc1@taskhuman.com' into text field 'id:field-:r0:'.</msg>
+<arg>id:field-:r0:</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:55.881435" elapsed="0.133280"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:56.014715" level="INFO">Typing text 'asdfgh@12345Q' into text field 'id:field-:r1:'.</msg>
+<arg>id:field-:r1:</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:56.014715" elapsed="0.093114"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:33:56.107829" level="INFO">Clicking element 'xpath://button[@value='submit']'.</msg>
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:33:56.107829" elapsed="0.049039"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:34:01.157114" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:33:56.156868" elapsed="5.000246"/>
+</kw>
+<arg>${consumer_email}</arg>
+<arg>${consumer_password}</arg>
+<status status="PASS" start="2025-01-14T12:33:49.391784" elapsed="11.765330"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:33:49.391784" elapsed="11.765330"/>
+</test>
+<test id="s1-s3-t2" name="AfterLogin_ Validate user lands on discovery page after login" line="13">
+<kw name="Validate Discover section and check if content is loaded">
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-01-14T12:34:01.157114" elapsed="0.616251"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=a.MenuBar-module__NavItem.MenuBar-module__active div.MenuBar-module__NavItem--link__lable.css-0</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:01.773365" elapsed="2.101840"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:03.875205" level="INFO">Clicking element 'css=a.MenuBar-module__NavItem.MenuBar-module__active div.MenuBar-module__NavItem--link__lable.css-0'.</msg>
+<arg>css=a.MenuBar-module__NavItem.MenuBar-module__active div.MenuBar-module__NavItem--link__lable.css-0</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:03.875205" elapsed="0.062724"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>How Programs Work</arg>
+<arg>5s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-14T12:34:03.937929" elapsed="1.778638"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:01.157114" elapsed="4.559453"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:01.157114" elapsed="4.559453"/>
+</test>
+<test id="s1-s3-t3" name="AfterLogin_ Validate if all the registered programs visibility and horizontal scroll" line="16">
+<kw name="Validate if all the registered programs visibility and horizontal scroll">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[1]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.719069" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:05.719069" level="INFO">Clicking element 'xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[1]'.</msg>
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.719069" elapsed="0.061412"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[last()]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.780481" elapsed="0.010587"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:05.791068" level="INFO">Clicking element 'xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[last()]'.</msg>
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[last()]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.791068" elapsed="0.065657"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[1]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.856725" elapsed="0.012439"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:05.869164" level="INFO">Clicking element 'xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[1]'.</msg>
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.869164" elapsed="0.042648"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:05.719069" elapsed="0.192743"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:05.719069" elapsed="0.192743"/>
+</test>
+<test id="s1-s3-t4" name="AfterLogin_ Validate on click behavior of each tile under every program/dictionary" line="19">
+<kw name="Validate on click behavior of each tile under every program/dictionary">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[last()]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.911812" elapsed="0.013532"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:05.926344" level="INFO">Clicking element 'xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[last()]'.</msg>
+<arg>xpath=(//div[contains(@class, "DiscoverTab-module__Header--tab")])[last()]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.925344" elapsed="0.067510"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "index-module__SessionType--Tab--Box")]/p)[1]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:05.993853" elapsed="0.029712"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:06.023849" level="INFO">Clicking element 'xpath=(//div[contains(@class, "index-module__SessionType--Tab--Box")]/p)[1]'.</msg>
+<arg>xpath=(//div[contains(@class, "index-module__SessionType--Tab--Box")]/p)[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.023849" elapsed="0.047964"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "index-module__SessionType--Tab--Box")]/p)[2]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.071813" elapsed="0.012461"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:06.085282" level="INFO">Clicking element 'xpath=(//div[contains(@class, "index-module__SessionType--Tab--Box")]/p)[2]'.</msg>
+<arg>xpath=(//div[contains(@class, "index-module__SessionType--Tab--Box")]/p)[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.084274" elapsed="0.049608"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:05.911812" elapsed="0.222070"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:05.911812" elapsed="0.222070"/>
+</test>
+<test id="s1-s3-t5" name="AfterLogin_ Validate based on type of ambassador, Free/Paid mins info should be displayed" line="22">
+<kw name="Validate based on type of ambassador, Free/Paid mins info should be displayed">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='MenuBar-module__Menubar--Credit__Label css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.134917" elapsed="0.011150"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:06.146067" level="INFO">Clicking element 'xpath://div[@class='MenuBar-module__Menubar--Credit__Label css-0']'.</msg>
+<arg>xpath://div[@class='MenuBar-module__Menubar--Credit__Label css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.146067" elapsed="0.062929"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="xpath=(//div[contains(@class, &quot;PaymentModal-module__PaymentModal--CreditOption&quot;)]) 10s">
+<msg time="2025-01-14T12:34:06.211068" level="FAIL">No keyword with name 'xpath=(//div[contains(@class, "PaymentModal-module__PaymentModal--CreditOption")]) 10s' found.</msg>
+<status status="FAIL" start="2025-01-14T12:34:06.211068" elapsed="0.000000">No keyword with name 'xpath=(//div[contains(@class, "PaymentModal-module__PaymentModal--CreditOption")]) 10s' found.</status>
+</kw>
+<msg time="2025-01-14T12:34:06.211068" level="INFO">${status1} = False</msg>
+<var>${status1}</var>
+<arg>${Reboot_user}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.208996" elapsed="0.002072"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Free!">
+<msg time="2025-01-14T12:34:06.212378" level="FAIL">No keyword with name 'Free!' found.</msg>
+<status status="FAIL" start="2025-01-14T12:34:06.212378" elapsed="0.000000">No keyword with name 'Free!' found.</status>
+</kw>
+<msg time="2025-01-14T12:34:06.212378" level="INFO">${status2} = False</msg>
+<var>${status2}</var>
+<arg>${Internal_user}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.211068" elapsed="0.001310"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${status1}</arg>
+<arg>Log</arg>
+<arg>User is Reboot</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.212378" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${status2}</arg>
+<arg>Log</arg>
+<arg>User is Internal</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.212378" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:06.134917" elapsed="0.078514"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:06.134917" elapsed="0.078514"/>
+</test>
+<test id="s1-s3-t6" name="AfterLogin_ Check Blog on Discover screen" line="25">
+<kw name="Check Blog on Discover screen">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:06.214413" level="INFO">Opening url 'https://app-dev.taskhuman.com/discover/66d99d3082098164d315705d'</msg>
+<arg>https://app-dev.taskhuman.com/discover/66d99d3082098164d315705d</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.214413" elapsed="0.284978"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[contains(@class, 'DiscoverProgram-module__DiscoverProgram--title__text') and contains(text(), 'BLOG')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:06.499391" elapsed="3.875284"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:06.214413" elapsed="4.160262"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:06.213431" elapsed="4.161244"/>
+</test>
+<test id="s1-s3-t7" name="AfterLogin_ Validate on click behavior of &quot;How Programs Work&quot; which is listed below Programs" line="28">
+<kw name="Validate on click behavior of &quot;How Programs Work&quot;">
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>How Programs Work</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-14T12:34:10.374675" elapsed="0.018329"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:10.374675" elapsed="0.018329"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-14T12:34:10.393004" elapsed="2.172449"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:10.374675" elapsed="2.190778"/>
+</test>
+<test id="s1-s3-t8" name="AfterLogin_ Validate if new user is landed on Discover page with &quot;Welcome to Taskhuman&quot; category selected" line="31">
+<kw name="Validate if new user is landed on Discover page with &quot;Welcome to Taskhuman&quot; category selected">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:12.565453" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:34:12.565453" elapsed="4.705444"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-14T12:34:17.270897" elapsed="0.028269"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:17.299166" elapsed="1.703590"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:19.002756" level="INFO">Clicking element 'xpath://div[@class='Login-module__signup-text css-0']'.</msg>
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:19.002756" elapsed="0.055773"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:19.058529" elapsed="0.017296"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:19.075825" level="INFO">Typing text 'raghuram.m+newuserwth@taskhuman.com' into text field 'id:field-:r0:'.</msg>
+<arg>id:field-:r0:</arg>
+<arg>raghuram.m+newuserwth@taskhuman.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:19.075825" elapsed="0.149734"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:19.225559" level="INFO">Typing text 'asd@123Q' into text field 'id:field-:r1:'.</msg>
+<arg>id:field-:r1:</arg>
+<arg>asd@123Q</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:19.225559" elapsed="0.065300"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:19.290859" level="INFO">Clicking element 'xpath://button[@value='submit']'.</msg>
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-14T12:34:19.290859" elapsed="0.051155"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:34:21.342536" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:34:19.342014" elapsed="2.000522"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2025-01-14T12:34:21.342536" elapsed="0.603176"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'Welcome-module__Welcome--Headers')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-14T12:34:21.946713" elapsed="4.432909"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-14T12:34:28.381016" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-14T12:34:26.380634" elapsed="2.000382"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:12.565453" elapsed="15.815563"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-14T12:34:28.381016" elapsed="2.157649"/>
+</kw>
+<status status="PASS" start="2025-01-14T12:34:12.565453" elapsed="17.973212"/>
+</test>
+<status status="PASS" start="2025-01-14T12:33:49.364495" elapsed="41.174170"/>
+</suite>
+<suite id="s1-s4" name="TC04 Settings Page" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\Web_EndToEnd\TC04_Settings_Page.robot">
+<test id="s1-s4-t1" name="Setting_ Validate discount code section in settings (with and without discount code)" line="6">
+<kw name="Login As Consumer" owner="Reboot_Consumer_login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:30.538665" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:34:30.538665" elapsed="1.835617"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-14T12:34:32.374282" elapsed="0.042511"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:42.621463" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-135.png"&gt;&lt;img src="selenium-screenshot-135.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-14T12:34:42.621463" level="FAIL">Element 'xpath://div[@class='Login-module__signup-text css-0']' not visible after 10 seconds.</msg>
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:34:32.416793" elapsed="10.235912">Element 'xpath://div[@class='Login-module__signup-text css-0']' not visible after 10 seconds.</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>id:field-:r1:</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<arg>${NoAmbassador_email}</arg>
+<arg>${NoAmbassador_password}</arg>
+<status status="FAIL" start="2025-01-14T12:34:30.538665" elapsed="12.114040">Element 'xpath://div[@class='Login-module__signup-text css-0']' not visible after 10 seconds.</status>
+</kw>
+<kw name="For user with Ambassador &quot;Check for discounts&quot; should be present">
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="Login As Consumer" owner="Reboot_Consumer_login">
+<arg>${consumer_email}</arg>
+<arg>${consumer_password}</arg>
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<kw name="For user with Ambassador &quot;Check for discounts&quot; should not be present">
+<status status="NOT RUN" start="2025-01-14T12:34:42.652705" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:34:30.538665" elapsed="12.114040">Element 'xpath://div[@class='Login-module__signup-text css-0']' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s4-t2" name="Settings Page_To Validate Preferences section" line="11">
+<kw name="Validate Preferences section">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:42.668247" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/preferences'</msg>
+<arg>https://app-dev.taskhuman.com/settings/preferences</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:34:42.668247" elapsed="0.658619"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:53.520731" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-136.png"&gt;&lt;img src="selenium-screenshot-136.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-14T12:34:53.520731" level="FAIL">Element 'xpath=//div[@class='SettingComponents-module__Preferences--DeactivateBtn css-0']' not visible after 10 seconds.</msg>
+<arg>xpath=//div[@class='SettingComponents-module__Preferences--DeactivateBtn css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:34:43.326866" elapsed="10.193865">Element 'xpath=//div[@class='SettingComponents-module__Preferences--DeactivateBtn css-0']' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:34:42.668247" elapsed="10.852484">Element 'xpath=//div[@class='SettingComponents-module__Preferences--DeactivateBtn css-0']' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:34:42.652705" elapsed="10.868026">Element 'xpath=//div[@class='SettingComponents-module__Preferences--DeactivateBtn css-0']' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s4-t3" name="Settings Page_To validate Payment method" line="13">
+<kw name="validate Payment method">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:34:53.523416" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/payment-method'</msg>
+<arg>https://app-dev.taskhuman.com/settings/payment-method</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:34:53.523416" elapsed="3.535640"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:07.271491" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-137.png"&gt;&lt;img src="selenium-screenshot-137.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-14T12:35:07.271491" level="FAIL">Element 'xpath://button[normalize-space()='Add Payment Method']' not visible after 10 seconds.</msg>
+<arg>xpath://button[normalize-space()='Add Payment Method']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:34:57.059056" elapsed="10.212435">Element 'xpath://button[normalize-space()='Add Payment Method']' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:34:53.523416" elapsed="13.748075">Element 'xpath://button[normalize-space()='Add Payment Method']' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:34:53.523416" elapsed="13.763949">Element 'xpath://button[normalize-space()='Add Payment Method']' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s4-t4" name="Settings Page_To validate Invite section" line="15">
+<kw name="validate Invite section">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:07.287676" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/invite'</msg>
+<arg>https://app-dev.taskhuman.com/settings/invite</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:35:07.287676" elapsed="3.690736"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:21.188238" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-138.png"&gt;&lt;img src="selenium-screenshot-138.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-01-14T12:35:21.188238" level="FAIL">Element 'xpath://img[@class='SettingComponents-module__QrImage css-0']' not visible after 10 seconds.</msg>
+<arg>xpath://img[@class='SettingComponents-module__QrImage css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:35:10.978412" elapsed="10.209826">Element 'xpath://img[@class='SettingComponents-module__QrImage css-0']' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:07.287676" elapsed="13.900562">Element 'xpath://img[@class='SettingComponents-module__QrImage css-0']' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:07.287676" elapsed="13.900562">Element 'xpath://img[@class='SettingComponents-module__QrImage css-0']' not visible after 10 seconds.</status>
+</test>
+<test id="s1-s4-t5" name="Settings Page_To validate join a program screen" line="17">
+<kw name="validate join a program screen">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:21.188238" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/join-program'</msg>
+<arg>https://app-dev.taskhuman.com/settings/join-program</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:35:21.188238" elapsed="3.570025"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.733637" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.733637" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>xpath://div[@class='SettingComponents-module__Discount--Coupons__Icon css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:35:24.758263" elapsed="3.029338">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:21.188238" elapsed="6.599363">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:21.188238" elapsed="6.599363">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t6" name="Settings Page_To validate FAQ section" line="19">
+<kw name="validate FAQ section">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.789323" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/faq'</msg>
+<msg time="2025-01-14T12:35:27.796441" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.796441" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>https://app-dev.taskhuman.com/settings/faq</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.789323" elapsed="0.016126">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[normalize-space()='FAQ']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.805449" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://a[normalize-space()='FAQ']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.805449" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.805449" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.805449" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/faq/#employee</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.805449" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.789323" elapsed="0.016126">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.789323" elapsed="0.016126">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t7" name="Settings Page_To validate App feedback section" line="21">
+<kw name="validate App feedback section">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.805449" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/feedback'</msg>
+<msg time="2025-01-14T12:35:27.805449" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.805449" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>https://app-dev.taskhuman.com/settings/feedback</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.805449" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[text()='ask@taskhuman.com']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.805449" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.805449" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.805449" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t8" name="Settings Page_To validate Notification settings section" line="23">
+<kw name="validate Notification settings section">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.805449" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/notification-settings'</msg>
+<msg time="2025-01-14T12:35:27.821304" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.821304" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>https://app-dev.taskhuman.com/settings/notification-settings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.805449" elapsed="0.015855">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://p[@class='chakra-text SettingComponents-module__How--Notification--Work--Text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.821304" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.805449" elapsed="0.015855">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.805449" elapsed="0.015855">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t9" name="Settings Page_To validate terms and conditions page redirection and content" line="25">
+<kw name="validate terms and conditions page redirection and content">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.821304" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/notification-settings'</msg>
+<msg time="2025-01-14T12:35:27.821304" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.837388" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>https://app-dev.taskhuman.com/settings/notification-settings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.821304" elapsed="0.016084">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Terms and Conditions</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), 'Terms and Conditions')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[normalize-space()='Terms and Conditions']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://a[normalize-space()='Terms and Conditions']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/terms-conditions/</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/terms-conditions/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.821304" elapsed="0.016084">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.821304" elapsed="0.016084">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t10" name="Settings Page_ To validate Privacy policy section" line="27">
+<kw name="validate Privacy policy section">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.837388" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings'</msg>
+<msg time="2025-01-14T12:35:27.837388" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.837388" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>url=https://app-dev.taskhuman.com/settings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.837388" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Privacy Policy</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[contains(text(), 'Privacy Policy')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://a[normalize-space()='Privacy Policy']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://a[normalize-space()='Privacy Policy']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Switch Window" owner="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Location Is" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/privacy-policy/</arg>
+<arg>10s</arg>
+<doc>Waits until the current URL is ``expected``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<arg>https://taskhuman.com/privacy-policy/</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.837388" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.837388" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.837388" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t11" name="Settings Page_ Check consumer is able to add cards under payment methods" line="29">
+<kw name="Check consumer is able to add cards under payment methods">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.837388" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings/payment-method'</msg>
+<msg time="2025-01-14T12:35:27.853645" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.853645" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>https://app-dev.taskhuman.com/settings/payment-method</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.837388" elapsed="0.016257">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Add Payment Method']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Add Payment Method']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Payment Methods']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Payment Methods']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=iframe[src*='stripe']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<arg>css=iframe[src*='stripe']</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[placeholder='Card Number']</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>css=input[placeholder='Card Number']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css=input[placeholder='Card Number']</arg>
+<arg>4242424242424242</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=iframe[src*='componentName=cardExpiry']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<arg>css=iframe[src*='componentName=cardExpiry']</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[placeholder="MM / YY"]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css=input[placeholder="MM / YY"]</arg>
+<arg>1228</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=iframe[src*='componentName=cardCvc']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Select Frame" owner="SeleniumLibrary">
+<arg>css=iframe[src*='componentName=cardCvc']</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=input[placeholder="CVV"]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>css=input[placeholder="CVV"]</arg>
+<arg>123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<kw name="Unselect Frame" owner="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.853645" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.837388" elapsed="0.016257">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.837388" elapsed="0.016257">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t12" name="Settings Page_validate if on adding card it can be made default" line="31">
+<kw name="validate if on adding card it can be made default">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.869294" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.869294" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>xpath=//label[@class='chakra-checkbox PaymentCard-module__CheckBox css-1577qb8']</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.853645" elapsed="0.015649">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//label[@class='chakra-checkbox PaymentCard-module__CheckBox css-1577qb8']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Save']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Save']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.853645" elapsed="0.015649">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.853645" elapsed="0.015649">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t13" name="Settings Page_Validate if added card can be deleted" line="33">
+<kw name="Validate if added card can be deleted">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.869294" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.869294" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.869294" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Delete']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//*[text()='Delete']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.869294" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.869294" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.869294" elapsed="0.000000">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<test id="s1-s4-t14" name="Settings Page_Validate if deleted card is not visible" line="35">
+<kw name="Validate if deleted card is not visible">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.885082" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.885082" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<arg>xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']</arg>
+<arg>10s</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="FAIL" start="2025-01-14T12:35:27.885082" elapsed="0.016013">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.901095" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.885082" elapsed="0.016013">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-01-14T12:35:27.901095" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-01-14T12:35:27.869294" elapsed="0.031801">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</status>
+</test>
+<status status="FAIL" start="2025-01-14T12:34:30.538665" elapsed="57.362430"/>
+</suite>
+<suite id="s1-s5" name="TC05 SearchModule" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\Web_EndToEnd\TC05_SearchModule.robot">
+<test id="s1-s5-t1" name="Search Module_ Validate discount code section in settings (with and without discount code)" line="12">
+<kw name="Login As Consumer" owner="Reboot_Consumer_login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-14T12:35:27.901095" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-14T12:35:27.901095" elapsed="4.755414"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-14T12:35:32.656509" elapsed="0.023778"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<errors>
+<msg time="2025-01-14T12:35:27.733637" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.796441" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.805449" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.821304" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.821304" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.837388" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.853645" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.869294" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.869294" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:27.885082" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.265)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6818880D5+2992373]
+	(No symbol) [0x00007FF68151BFD0]
+	(No symbol) [0x00007FF6813B590A]
+	(No symbol) [0x00007FF68138F4F5]
+	(No symbol) [0x00007FF6814363A7]
+	(No symbol) [0x00007FF68144EE72]
+	(No symbol) [0x00007FF68142F113]
+	(No symbol) [0x00007FF6813FA918]
+	(No symbol) [0x00007FF6813FBA81]
+	GetHandleVerifier [0x00007FF6818E6A2D+3379789]
+	GetHandleVerifier [0x00007FF6818FC32D+3468109]
+	GetHandleVerifier [0x00007FF6818F0043+3418211]
+	GetHandleVerifier [0x00007FF68167C78B+847787]
+	(No symbol) [0x00007FF68152757F]
+	(No symbol) [0x00007FF681522FC4]
+	(No symbol) [0x00007FF68152315D]
+	(No symbol) [0x00007FF681512979]
+	BaseThreadInitThunk [0x00007FFCF95E259D+29]
+	RtlUserThreadStart [0x00007FFCFB0CAF38+40]
+</msg>
+<msg time="2025-01-14T12:35:34.758890" level="ERROR">Execution stopped by user.</msg>
+</errors>
+</robot>

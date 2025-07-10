@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-11-28T13:09:25.007279" rpa="false" schemaversion="5">
+<suite id="s1" name="TC10 BookingInstructions" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\CriticalFlows\TC10_BookingInstructions.robot">
+<test id="s1-t1" name="Open the browser and login as Consumer" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:25.242665" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>https://app-dev.taskhuman.com/login</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-28T13:09:25.242665" elapsed="5.356999"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-28T13:09:30.601676" elapsed="0.090050"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:09:30.691726" elapsed="0.916207"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:09:36.608483" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:09:31.607933" elapsed="5.000550"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:36.608483" level="INFO">Clicking element 'xpath://div[@class='Login-module__signup-text css-0']'.</msg>
+<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:09:36.608483" elapsed="0.153320"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:09:41.782253" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:09:36.761803" elapsed="5.020450"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:field-:r0:</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:09:41.782253" elapsed="0.066396"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:09:46.849275" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:09:41.848649" elapsed="5.000626"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:46.850313" level="INFO">Typing text 'raghuram.m+rc1@taskhuman.com' into text field 'id:field-:r0:'.</msg>
+<arg>id:field-:r0:</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:09:46.850313" elapsed="0.287296"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:47.137609" level="INFO">Typing text 'asdfgh@12345Q' into text field 'id:field-:r1:'.</msg>
+<arg>id:field-:r1:</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:09:47.137609" elapsed="0.254011"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:47.392645" level="INFO">Clicking element 'xpath://button[@value='submit']'.</msg>
+<arg>xpath://button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:09:47.392645" elapsed="0.159477"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:09:52.552583" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:09:47.552122" elapsed="5.000461"/>
+</kw>
+<status status="PASS" start="2024-11-28T13:09:25.242665" elapsed="27.309918"/>
+</test>
+<test id="s1-t2" name="Check How Booking work is clickable" line="25">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:52.552583" level="INFO">Opening url 'https://app-dev.taskhuman.com/bookings'</msg>
+<arg>https://app-dev.taskhuman.com/bookings</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-28T13:09:52.552583" elapsed="1.010890"/>
+</kw>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-11-28T13:09:53.563473" elapsed="0.762477"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//p[@class='chakra-text BookingRouteCss-module__BookingWork--Text css-0']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:09:54.327055" elapsed="2.594664"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:09:56.926767" level="INFO">Clicking element 'xpath=//p[@class='chakra-text BookingRouteCss-module__BookingWork--Text css-0']'.</msg>
+<arg>xpath=//p[@class='chakra-text BookingRouteCss-module__BookingWork--Text css-0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:09:56.926767" elapsed="0.229827"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:10:02.157104" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:09:57.156594" elapsed="5.000510"/>
+</kw>
+<status status="PASS" start="2024-11-28T13:09:52.552583" elapsed="9.604521"/>
+</test>
+<test id="s1-t3" name="Validate if 3 instructions are visible" line="31">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(text(), 'Open the app at the time of your session to call your coach.')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:10:02.157104" elapsed="0.054620"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:10:02.250388" level="INFO">${actual_text} = Open the app at the time of your session to call your coach.</msg>
+<var>${actual_text}</var>
+<arg>xpath=//div[contains(text(), 'Open the app at the time of your session to call your coach.')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:10:02.211724" elapsed="0.038664"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${Expected Inst01}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-28T13:10:02.251770" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:10:04.252101" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:10:02.251770" elapsed="2.000331"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(text(), 'Cancel any time without penalty before the session starts.')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:10:04.252101" elapsed="0.041153"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:10:04.326301" level="INFO">${actual_text} = Cancel any time without penalty before the session starts.</msg>
+<var>${actual_text}</var>
+<arg>xpath=//div[contains(text(), 'Cancel any time without penalty before the session starts.')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:10:04.293254" elapsed="0.033047"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${Expected Inst02}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-28T13:10:04.326301" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:10:06.326556" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:10:04.326301" elapsed="2.000255"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(text(), 'If the coach doesn’t pick up the call, your minutes will be credited back to your account.')]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:10:06.326556" elapsed="0.035476"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:10:06.392062" level="INFO">${actual_text} = If the coach doesn’t pick up the call, your minutes will be credited back to your account.</msg>
+<var>${actual_text}</var>
+<arg>xpath=//div[contains(text(), 'If the coach doesn’t pick up the call, your minutes will be credited back to your account.')]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:10:06.363043" elapsed="0.029019"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${actual_text}</arg>
+<arg>${Expected Inst03}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-11-28T13:10:06.392062" elapsed="0.003547"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:10:08.396121" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:10:06.395609" elapsed="2.000512"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Got It!']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-28T13:10:08.396121" elapsed="0.037518"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-28T13:10:08.433639" level="INFO">Clicking element 'xpath://*[text()='Got It!']'.</msg>
+<arg>xpath://*[text()='Got It!']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-28T13:10:08.433639" elapsed="0.128229"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-28T13:10:14.562747" level="INFO">Slept 6 seconds.</msg>
+<arg>6s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-28T13:10:08.561868" elapsed="6.000879"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-28T13:10:14.562747" elapsed="2.445827"/>
+</kw>
+<status status="PASS" start="2024-11-28T13:10:02.157104" elapsed="14.851470"/>
+</test>
+<status status="PASS" start="2024-11-28T13:09:25.030842" elapsed="51.977732"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="TC10 BookingInstructions">TC10 BookingInstructions</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
