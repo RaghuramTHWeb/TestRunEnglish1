@@ -2,15 +2,15 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${email}    raghuram.m+rc1@taskhuman.com
-${Password}    asdfgh@12345Q
+${email}    Replace this message with your Consumer email
+${Password}   Replace this message with your Consumer email
 ${Expected Inst01}    Open the app at the time of your session to call your coach.
 ${Expected Inst02}    Cancel any time without penalty before the session starts.
 ${Expected Inst03}    If the coach doesn’t pick up the call, your minutes will be credited back to your account.
-${PROVIDER_EMAIL}    raghuram.m+rp1@taskhuman.com
-${PROVIDER_PASSWORD}    asdfgh@12345A
-${CONSUMER_EMAIL}    raghuram.m+rc1@taskhuman.com
-${CONSUMER_PASSWORD}    asdfgh@12345Q
+${PROVIDER_EMAIL}    Replace this message with your provider email
+${PROVIDER_PASSWORD}    Replace this message with your provider Password
+${CONSUMER_EMAIL}    Replace this message with your Consumer email
+${CONSUMER_PASSWORD}    Replace this message with your Consumer email
 *** Test Cases ***
 Open the browser and login as Consumer
      # Logs in as a consumer in normal mode.
