@@ -19,14 +19,14 @@ Open Browser With Unique Profile
     ${USER_PROFILE_PARENT_DIR}=    Set Variable    ${CURDIR}${/}chrome_profiles
     ${USER_DATA_DIR}=    Set Variable    ${USER_PROFILE_PARENT_DIR}${/}${TIMESTAMP}_${RANDOM_STRING}
 
-    # Create parent directory if it doesn't exist
-    ${parent_exists}=    Directory Should Exist    ${USER_PROFILE_PARENT_DIR}    False
+    # Create parent directory if not exists
+    ${parent_exists}=    Evaluate    os.path.isdir(r'''${USER_PROFILE_PARENT_DIR}''')    modules=os
     Run Keyword Unless    ${parent_exists}    Create Directory    ${USER_PROFILE_PARENT_DIR}
 
-    ${data_dir_exists}=    Directory Should Exist    ${USER_DATA_DIR}    False
+    ${data_dir_exists}=    Evaluate    os.path.isdir(r'''${USER_DATA_DIR}''')    modules=os
     Run Keyword Unless    ${data_dir_exists}    Create Directory    ${USER_DATA_DIR}
 
-    # Combine arguments
+    # Build Chrome options
     ${ALL_OPTIONS_LIST}=    Create List    @{CHROME_BASE_ARGS}
     Append To List    ${ALL_OPTIONS_LIST}    --user-data-dir=${USER_DATA_DIR}
     ${OPTIONS_STRING}=    Combine To String    ${ALL_OPTIONS_LIST}
@@ -37,12 +37,11 @@ Open Browser With Unique Profile
 Close And Clean All Browsers
     Close All Browsers
     ${USER_DATA_DIR_TO_CLEAN}=    Get Variable Value    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
-    Run Keyword If    '${USER_DATA_DIR_TO_CLEAN}' != '${NONE}' and    Directory Should Exist    ${USER_DATA_DIR_TO_CLEAN}    False
-    ...    Remove Directory    ${USER_DATA_DIR_TO_CLEAN}    recursive=True
+    ${dir_exists}=    Evaluate    os.path.isdir(r'''${USER_DATA_DIR_TO_CLEAN}''')    modules=os
+    Run Keyword If    '${USER_DATA_DIR_TO_CLEAN}' != '${NONE}' and ${dir_exists}    Remove Directory    ${USER_DATA_DIR_TO_CLEAN}    recursive=True
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
 
-*** Keywords ***
 Combine To String
     [Arguments]    @{list}
-    ${joined}=    Evaluate    " ".join("""@{list}""")    modules=robot.libraries.BuiltIn
+    ${joined}=    Evaluate    " ".join(@{list})
     [Return]    ${joined}
