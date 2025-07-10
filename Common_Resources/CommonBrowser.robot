@@ -6,19 +6,26 @@ Library    String
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${alias}
     ${uuid}=    Generate Random String    8
+    ${profile_path}=    Set Variable    /tmp/${alias}_profile_${uuid}
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-    ${arg}=    Set Variable    --user-data-dir=/tmp/profile_${uuid}
-    Call Method    ${options}    add_argument    ${arg}
+    Call Method    ${options}    add_argument    --user-data-dir=${profile_path}
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
+    Call Method    ${options}    add_argument    --remote-debugging-port=9222
     Create WebDriver    Chrome    options=${options}    alias=${alias}
     Go To    ${url}
 
 Open Incognito Browser With Unique Profile
     [Arguments]    ${url}    ${alias}
     ${uuid}=    Generate Random String    8
+    ${profile_path}=    Set Variable    /tmp/${alias}_profile_${uuid}
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-    ${arg1}=    Set Variable    --user-data-dir=/tmp/incog_${uuid}
-    ${arg2}=    Set Variable    --incognito
-    Call Method    ${options}    add_argument    ${arg1}
-    Call Method    ${options}    add_argument    ${arg2}
+    Call Method    ${options}    add_argument    --incognito
+    Call Method    ${options}    add_argument    --user-data-dir=${profile_path}
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
+    Call Method    ${options}    add_argument    --remote-debugging-port=9222
     Create WebDriver    Chrome    options=${options}    alias=${alias}
     Go To    ${url}
