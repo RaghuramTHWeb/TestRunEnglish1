@@ -5,10 +5,11 @@ Suite Teardown    Close All Browsers
 *** Variables ***
 ${ONLINE_TEXT}   You're now online!
 ${OFFLINE_TEXT}  You're offline now!
-${PROVIDER_EMAIL}    raghuram.m+02@taskhuman.com
-${PROVIDER_PASSWORD}    asd@123Q
-${CONSUMER_EMAIL}    raghuram.m+01@taskhuman.com
-${CONSUMER_PASSWORD}    asdfgh@12345A
+${PROVIDER_EMAIL}    Replace this message with your provider email
+${PROVIDER_PASSWORD}    Replace this message with your provider Password
+${CONSUMER_EMAIL}    Replace this message with your Consumer email
+${CONSUMER_PASSWORD}    Replace this message with your COnsumer Password
+
 
 *** Test Cases ***
 Open and Position Browsers
