@@ -1,4 +1,4 @@
-name: Run Robot Framework Tests
+name: Run Robot Framework Tests from CriticalFlows
 
 on:
   push:
@@ -7,11 +7,11 @@ on:
       - '.github/workflows/robot-tests.yml'
 
 jobs:
-  robot-tests:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
     - name: Set up Python
@@ -22,17 +22,20 @@ jobs:
     - name: Install Google Chrome
       run: |
         sudo apt update
-        sudo apt install -y google-chrome-stable
+        sudo apt install -y wget gnupg2
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
-    - name: Install dependencies
+    - name: Install Python dependencies
       run: |
+        pip install --upgrade pip
         pip install robotframework selenium robotframework-seleniumlibrary
 
-    - name: Run Robot Tests
+    - name: Run Robot Framework Tests from CriticalFlows folder
       run: |
         robot CriticalFlows
 
-    - name: Upload Robot Reports
+    - name: Upload Robot Test Reports
       uses: actions/upload-artifact@v4
       with:
         name: RobotReports
