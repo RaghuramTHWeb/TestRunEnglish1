@@ -2,10 +2,10 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${PROVIDER_EMAIL}    raghuram.m+rp1@taskhuman.com
-${PROVIDER_PASSWORD}    asdfgh@12345A
-${CONSUMER_EMAIL}    raghuram.m+rc1@taskhuman.com
-${CONSUMER_PASSWORD}    asdfgh@12345Q
+${PROVIDER_EMAIL}    Replace this message with your provider email
+${PROVIDER_PASSWORD}    Replace this message with your provider Password
+${CONSUMER_EMAIL}    Replace this message with your Consumer email
+${CONSUMER_PASSWORD}    Replace this message with your COnsumer Password
 ${ONLINE_TEXT}   You're now online!
 ${OFFLINE_TEXT}  You're offline now!
 ${ADD_TO_CAL_BUTTON}    xpath=//div[@data-testid="booking_add_to_cal_btn"]
