@@ -1,0 +1,44 @@
+name: Run Robot Framework Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Robot Framework
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework
+        pip install robotframework-seleniumlibrary  # remove this line if not using browser
+
+    - name: Run Arabic_CriticalFlows Tests
+      run: |
+        robot --output ArabicResults/output.xml --log ArabicResults/log.html --report ArabicResults/report.html Arabic_CriticalFlows/
+
+    - name: Run CriticalFlows Tests
+      run: |
+        robot --output CriticalResults/output.xml --log CriticalResults/log.html --report CriticalResults/report.html CriticalFlows/
+
+    - name: Upload Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: RobotTestReports
+        path: |
+          ArabicResults/log.html
+          ArabicResults/report.html
+          CriticalResults/log.html
+          CriticalResults/report.html
