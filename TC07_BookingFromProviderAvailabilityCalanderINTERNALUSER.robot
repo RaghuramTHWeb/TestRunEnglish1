@@ -4,8 +4,8 @@ Suite Teardown    Close All Browsers
 
 #book a seesion by scrolling calander to last availability>boook> deleteNA
 *** Variables ***
-${CONSUMER_EMAIL}    raghuram.m+01@taskhuman.com
-${CONSUMER_PASSWORD}    asdfgh@12345A
+${CONSUMER_EMAIL}    Replace this message with your Consumer email
+${CONSUMER_PASSWORD}    Replace this message with your COnsumer Password
 ${Scroll_L2R_R2L}    2
 
 
