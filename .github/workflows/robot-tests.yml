@@ -23,22 +23,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install robotframework
-        pip install robotframework-seleniumlibrary  # remove this line if not using browser
+        pip install robotframework-seleniumlibrary
 
-    - name: Run Arabic_CriticalFlows Tests
+    - name: Run Robot Tests
       run: |
-        robot --output ArabicResults/output.xml --log ArabicResults/log.html --report ArabicResults/report.html Arabic_CriticalFlows/
+        robot .
 
-    - name: Run CriticalFlows Tests
-      run: |
-        robot --output CriticalResults/output.xml --log CriticalResults/log.html --report CriticalResults/report.html CriticalFlows/
-
-    - name: Upload Reports
-      uses: actions/upload-artifact@v3
+    - name: Upload Robot Report
+      uses: actions/upload-artifact@v4
       with:
-        name: RobotTestReports
+        name: robot-reports
         path: |
-          ArabicResults/log.html
-          ArabicResults/report.html
-          CriticalResults/log.html
-          CriticalResults/report.html
+          log.html
+          report.html
+          output.xml
