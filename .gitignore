@@ -1,0 +1,27 @@
+# Robot Framework output files
+output/
+log.html
+report.html
+*.log
+*.xml
+*.png
+
+# Python virtual environment
+venv/
+.venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+
+# Editor/IDE specific files
+.idea/ # For PyCharm users
+.vscode/ # For VS Code users
+*.swp # Vim swap files
+*~ # Emacs backup files
+
+# Dependencies
+# Pip
+.pip/
+pip-log.txt
+.Python

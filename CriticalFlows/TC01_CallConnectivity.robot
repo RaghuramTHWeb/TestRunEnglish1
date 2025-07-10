@@ -1,7 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library     String
-Resource    ../Common_Resources/CommonBrowser.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -119,15 +117,13 @@ Accept Call as Provider in Incognito
 Open and Position Browsers
     # Opens two browsers and positions them side by side.
     # Open first browser (normal mode)
-    #Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
-    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
     Set Window Size    650    1200
     Set Window Position    0    0
     Log    Normal browser size and position set.
 
     # Open second browser (incognito mode)
-    #Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
-    Open Incognito Browser With Unique Profile    https://app-dev.taskhuman.com/login    INC
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
     Set Window Size    650    1200
     Set Window Position    650    0
     Log    Incognito browser size and position set.

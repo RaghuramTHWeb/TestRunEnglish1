@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../Common_Resources/CommonBrowser.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -17,7 +16,7 @@ ${OFFLINE_TEXT}  You're offline now!
 
 Login as Provider
     # Logs in as a consumer in normal mode.
-    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
     Sleep    5s
     Click Element    xpath://div[@class='Login-module__signup-text css-0']
