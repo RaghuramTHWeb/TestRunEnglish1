@@ -2,49 +2,42 @@ name: Robot Framework Tests
 
 on:
   push:
-    branches: [ main ] # Trigger on pushes to the main branch
+    branches: [ main ]
   pull_request:
-    branches: [ main ] # Trigger on pull requests to the main branch
+    branches: [ main ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Use a Linux virtual machine
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4 # Step 1: Checkout your code
+    - uses: actions/checkout@v4
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.x' # You can specify a version like '3.9', '3.10', etc.
+        python-version: '3.x'
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        # Install Robot Framework, SeleniumLibrary, and webdriver-manager
         pip install robotframework robotframework-seleniumlibrary webdriver-manager
-        # Add any other Python dependencies your project needs here
-        # For example: pip install robotframework-requests
 
     - name: Setup Chrome and ChromeDriver
-      # This action ensures Chrome and a compatible ChromeDriver are available
       uses: browser-actions/setup-chrome@latest
       with:
-        chrome-version: stable # Use the latest stable Chrome version
+        chrome-version: stable
 
     - name: Run Robot Framework tests
       run: |
-        # Set environment variable for Chrome options
-        # These options are crucial for running Chrome headless in CI environments
-        export CHROME_OPTIONS="--headless --disable-gpu --no-sandbox --disable-dev-shm-usage --window-size=1920,1080 --remote-debugging-port=9222"
-
-        # Execute Robot Framework tests in the CriticalFlows directory
+        # *** UPDATED CHROME_OPTIONS HERE ***
+        export CHROME_OPTIONS="--headless --disable-gpu --no-sandbox --disable-dev-shm-usage --window-size=1920,1080 --remote-debugging-port=9222 --disable-setuid-sandbox --disable-features=UtilityProcessSandbox --disable-background-networking --disable-default-apps --disable-extensions --disable-sync --disable-translate --hide-scrollbars --metrics-recording-only --mute-audio --no-first-run --no-default-browser-check --no-zygote --single-process --ignore-certificate-errors --disable-popup-blocking --disable-infobars"
+        
         robot CriticalFlows/
 
-    # Optional: Upload test results as artifacts
     - name: Upload Robot Framework Results
       uses: actions/upload-artifact@v4
       with:
         name: robot-results
-        path: output/ # Or wherever your log.html, report.html are generated
+        path: output/
         if-no-files-found: ignore
