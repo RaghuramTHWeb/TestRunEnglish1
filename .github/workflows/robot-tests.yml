@@ -2,26 +2,27 @@ name: Run Robot Framework Tests
 
 on:
   push:
-    branches:
-      - main
+    paths:
+      - 'CriticalFlows/**'
+      - '.github/workflows/robot-tests.yml'
 
 jobs:
-  run-tests:
+  robot-tests:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
+    - name: Install Robot Framework and dependencies
       run: |
         pip install robotframework selenium robotframework-seleniumlibrary
 
-    - name: Run Robot Tests (headless via args.txt)
+    - name: Run Robot Tests
       run: |
-        robot --argumentfile args.txt .
+        robot CriticalFlows
