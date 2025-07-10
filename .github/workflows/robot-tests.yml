@@ -24,14 +24,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install robotframework
           pip install robotframework-seleniumlibrary
-          pip install chromedriver-autoinstaller
           pip install selenium
+          pip install chromedriver-autoinstaller
 
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
 
       - name: Install ChromeDriver
         run: python -c "import chromedriver_autoinstaller; chromedriver_autoinstaller.install()"
+
+      # ✅ DEBUG STEP – to help inspect what's installed
+      - name: Debug Info
+        run: |
+          which python
+          python --version
+          echo "---- Chrome ----"
+          google-chrome --version || chromium --version
+          echo "---- ChromeDriver ----"
+          chromedriver --version || echo "No chromedriver found in PATH"
 
       - name: Run Robot Framework Tests
         run: robot CriticalFlows/
