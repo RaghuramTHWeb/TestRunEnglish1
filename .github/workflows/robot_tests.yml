@@ -1,0 +1,43 @@
+name: Robot Framework Tests
+
+on:
+  push:
+    branches: [ main ] # Trigger on pushes to the main branch
+  pull_request:
+    branches: [ main ] # Trigger on pull requests to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Use a Linux virtual machine
+
+    steps:
+    - uses: actions/checkout@v4 # Step 1: Checkout your code
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x' # Use a specific Python version (e.g., '3.9')
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Assuming you have a requirements.txt file listing your Robot Framework and libraries
+        # If you don't, you'd list them directly: pip install robotframework robotframework-seleniumlibrary
+        pip install robotframework robotframework-seleniumlibrary # Example
+        # If you have a requirements.txt:
+        # pip install -r requirements.txt
+
+    - name: Run Robot Framework tests
+      run: |
+        robot your_test_suite_folder/your_test_suite.robot # Adjust this path as needed
+        # Or to run all tests in the root of your repo:
+        # robot .
+        # Or to run a specific test suite:
+        # robot Tests/MyLoginTests.robot
+
+    # Optional: Upload test results as artifacts
+    - name: Upload Robot Framework Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-results
+        path: output/ # Or wherever your log.html, report.html are generated
+        if-no-files-found: ignore
