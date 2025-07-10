@@ -7,8 +7,8 @@ ${MAIN_CONTAINER}    xpath=//div[contains(@class,"Welcome-module__Welcome")]
 ${HEADERS}           xpath=//div[contains(@class,"Welcome--Headers")]
 ${BLOGS_BOX}         xpath=//div[contains(@class,"Welcome--Blogs__Box")]
 ${CARD_LIST}         xpath=//div[contains(@class,"CardListContainer")]
-${CONSUMER_EMAIL}    raghuram.m+newuserwth@taskhuman.com
-${CONSUMER_PASSWORD}    asd@123Q
+${CONSUMER_EMAIL}    Replace user email whith new account only
+${CONSUMER_PASSWORD}    Replace message with your password
 
 *** Test Cases ***
 Open the browser and login as New Consumer
