@@ -1,5 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
+Suite Teardown    Close All Browsers
+
 #book a seesion by scrolling calander to last availability>boook> deleteNA
 *** Variables ***
 ${email}    raghuram.m+rc1@taskhuman.com
@@ -101,4 +103,3 @@ Goto Settings and logout as consumer
     Sleep    3s
     Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
     Click Element                       xpath=//div[@data-testid='confirm_btn']
-    Close Browser

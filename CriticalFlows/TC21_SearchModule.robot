@@ -144,7 +144,6 @@ Check consumer is asked a confirmation before logout
     Wait Until Element Is Visible    xpath=//*[text()='Ok']    10s
     Click Element    xpath=//*[text()='Ok']
     Sleep    3s
-    Close Browser
 
 
 

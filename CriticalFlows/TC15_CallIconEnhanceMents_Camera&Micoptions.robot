@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../Common_Resources/CommonBrowser.robot
 Library    BuiltIn
 Suite Teardown    Close All Browsers
 
@@ -148,13 +147,13 @@ Validate Mic options
 Open and Position Browsers
     # Opens two browsers and positions them side by side.
     # Open first browser (normal mode)
-    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
     Set Window Size    650    1200
     Set Window Position    0    0
     Log    Normal browser size and position set.
 
     # Open second browser (incognito mode)
-    Open Incognito Browser With Unique Profile    https://app-dev.taskhuman.com/login    INC
+    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
     Set Window Size    650    1200
     Set Window Position    650    0
     Log    Incognito browser size and position set.
@@ -199,5 +198,3 @@ Goto Settings and logout as Provider
     Sleep    3s
     Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
     Click Element                       xpath=//div[@data-testid='confirm_btn']
-    Close Browser
-

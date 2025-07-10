@@ -215,4 +215,3 @@ Goto Settings and logout as Provider
     Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
     Click Element                       xpath=//div[@data-testid='confirm_btn']
 
-    Close Browser
