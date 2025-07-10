@@ -6,10 +6,10 @@ Suite Teardown    Close All Browsers
 *** Variables ***
 ${ONLINE_TEXT}   You're now online!
 ${OFFLINE_TEXT}  You're offline now!
-${PROVIDER_EMAIL}    raghuram.m+rp1@taskhuman.com
-${PROVIDER_PASSWORD}    asdfgh@12345A
-${CONSUMER_EMAIL}    raghuram.m+rc1@taskhuman.com
-${CONSUMER_PASSWORD}    asdfgh@12345Q
+${PROVIDER_EMAIL}    Replace this message with your provider email
+${PROVIDER_PASSWORD}    Replace this message with your provider Password
+${CONSUMER_EMAIL}    Replace this message with your Consumer email
+${CONSUMER_PASSWORD}    Replace this message with your COnsumer Password
 
 ${POPOVER}           xpath=//section[contains(@class, "chakra-popover__content") and contains(@class, "PopoverButton-module__content") and contains(@style, "visibility: visible")]
 ${OPTIONS_UL}        xpath=${POPOVER}//ul[@aria-labelledby="txt-choose-video-quality"]   # Change this to camera or mic as needed
