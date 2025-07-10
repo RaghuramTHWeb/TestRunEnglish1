@@ -19,16 +19,19 @@ Open Browser With Unique Profile
     [Arguments]    ${url}    ${browser_alias}=${NONE}
 
     # Generate a unique path for the user data directory using forward slashes
-    # Robot Framework's 'CURDIR' typically ends with a slash on Linux, but adding one for certainty.
     ${TIMESTAMP}=    Get Time    epoch
     ${RANDOM_STRING}=    Generate Random String    length=8    chars=[ALPHANUMERIC]
-    # --- MODIFIED LINE for path construction ---
     ${USER_PROFILE_PARENT_DIR}=    Set Variable    ${CURDIR}/chrome_profiles
     ${USER_DATA_DIR}=              Set Variable    ${USER_PROFILE_PARENT_DIR}/${TIMESTAMP}_${RANDOM_STRING}
 
     # Ensure the parent directory for profiles exists, then create the unique profile directory
-    Create Directory    ${USER_PROFILE_PARENT_DIR}    exist_ok=True
-    Create Directory    ${USER_DATA_DIR}    exist_ok=True
+    # --- CRITICAL MODIFICATION START ---
+    ${parent_exists}=    Run Keyword And Return Status    Directory Exists    ${USER_PROFILE_PARENT_DIR}
+    Run Keyword Unless    ${parent_exists}    Create Directory    ${USER_PROFILE_PARENT_DIR}
+
+    ${data_dir_exists}=  Run Keyword And Return Status    Directory Exists    ${USER_DATA_DIR}
+    Run Keyword Unless    ${data_dir_exists}    Create Directory    ${USER_DATA_DIR}
+    # --- CRITICAL MODIFICATION END ---
 
     # Combine base options with the unique user data directory argument
     ${ALL_OPTIONS}=    Create List    ${CHROME_BASE_OPTIONS}
@@ -38,7 +41,6 @@ Open Browser With Unique Profile
     Open Browser    ${url}    chrome    options=${ALL_OPTIONS}    alias=${browser_alias}
 
     # Store the user data directory path in a test variable for cleanup in teardown
-    # --- Ensure this variable is correctly set within the test scope ---
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${USER_DATA_DIR}
 
 Close And Clean All Browsers
@@ -46,10 +48,11 @@ Close And Clean All Browsers
     Close All Browsers
 
     # Retrieve the user data directory path stored during browser opening
-    # --- No change needed here, as the variable is initialized above and set in Open Browser With Unique Profile ---
-    ${USER_DATA_DIR_TO_CLEAN}=    Get Variable Value     ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
+    ${USER_DATA_DIR_TO_CLEAN}=    Get Variable Value       ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
 
-    # If a user data directory was set and is not empty, try to remove it recursively
-    Run Keyword If    '${USER_DATA_DIR_TO_CLEAN}' != '${NONE}' and '${USER_DATA_DIR_TO_CLEAN}' != ''    Remove Directory    ${USER_DATA_DIR_TO_CLEAN}    recursive=True
+    # If a user data directory was set and exists, try to remove it recursively
+    ${data_dir_to_clean_exists}=    Run Keyword And Return Status    Directory Exists    ${USER_DATA_DIR_TO_CLEAN}
+    Run Keyword If    ${data_dir_to_clean_exists}    Remove Directory    ${USER_DATA_DIR_TO_CLEAN}    recursive=True
+
     # Reset the variable after cleanup to ensure clean state for next test
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
