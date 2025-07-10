@@ -24,6 +24,11 @@ jobs:
         pip install robotframework robotframework-seleniumlibrary webdriver-manager
         # Add any other Python dependencies your project needs here
 
+    - name: Check Robot Framework and Pip versions
+      run: |
+        robot --version
+        pip list
+
     - name: Setup Chrome and ChromeDriver
       uses: browser-actions/setup-chrome@latest
       with:
@@ -31,10 +36,6 @@ jobs:
 
     - name: Run Robot Framework tests
       run: |
-        # The CHROME_OPTIONS are now handled in Robot Framework's BrowserKeywords.robot
-        # You can remove or comment out the line below as it's now redundant:
-        # export CHROME_OPTIONS="--headless --disable-gpu --no-sandbox --disable-dev-shm-usage --window-size=1920,1080 --remote-debugging-port=9222 --disable-setuid-sandbox --disable-features=UtilityProcessSandbox --disable-background-networking --disable-default-apps --disable-extensions --disable-sync --disable-translate --hide-scrollbars --metrics-recording-only --mute-audio --no-first-run --no-default-browser-check --no-zygote --single-process --ignore-certificate-errors --disable-popup-blocking --disable-infobars"
-        
         robot CriticalFlows/
 
     - name: Upload Robot Framework Results
