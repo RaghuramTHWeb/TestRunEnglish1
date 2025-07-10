@@ -12,8 +12,6 @@ Open Browser With Unique Profile
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method    ${options}    add_argument    --disable-dev-shm-usage
     Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
-    # Optional: Uncomment if you want headless
-    # Call Method    ${options}    add_argument    --headless=new
     Create WebDriver    Chrome    options=${options}    alias=${alias}
     Go To    ${url}
 
@@ -27,7 +25,5 @@ Open Incognito Browser With Unique Profile
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method    ${options}    add_argument    --disable-dev-shm-usage
     Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
-    # Optional: Uncomment if you want headless
-    # Call Method    ${options}    add_argument    --headless=new
     Create WebDriver    Chrome    options=${options}    alias=${alias}
     Go To    ${url}
