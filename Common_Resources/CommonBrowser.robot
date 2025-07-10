@@ -2,25 +2,37 @@
 Library    SeleniumLibrary
 Library    String
 Library    OperatingSystem
+Library    Collections
 
 *** Keywords ***
+
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${alias}
     ${uuid}=    Generate Random String    8
-    ${profile_path}=    Set Variable    ${OUTPUT DIR}/${alias}_profile_${uuid}
-    Create Directory    ${profile_path}
-
+    ${profile_dir}=    Set Variable    /tmp/${alias}_profile_${uuid}
+    Create Directory    ${profile_dir}
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${options}    add_argument    --user-data-dir=${profile_dir}
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
+    Call Method    ${options}    add_argument    --disable-notifications
+    Call Method    ${options}    add_argument    --disable-extensions
+    Create WebDriver    Chrome    options=${options}    alias=${alias}
+    Go To    ${url}
 
-    ${arg1}=    Set Variable    --user-data-dir=${profile_path}
-    ${arg2}=    Set Variable    --no-sandbox
-    ${arg3}=    Set Variable    --disable-dev-shm-usage
-    ${arg4}=    Set Variable    --disable-blink-features=AutomationControlled
-
-    Call Method    ${options}    add_argument    ${arg1}
-    Call Method    ${options}    add_argument    ${arg2}
-    Call Method    ${options}    add_argument    ${arg3}
-    Call Method    ${options}    add_argument    ${arg4}
-
+Open Incognito Browser With Unique Profile
+    [Arguments]    ${url}    ${alias}
+    ${uuid}=    Generate Random String    8
+    ${profile_dir}=    Set Variable    /tmp/${alias}_profile_${uuid}
+    Create Directory    ${profile_dir}
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${options}    add_argument    --incognito
+    Call Method    ${options}    add_argument    --user-data-dir=${profile_dir}
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
+    Call Method    ${options}    add_argument    --disable-notifications
+    Call Method    ${options}    add_argument    --disable-extensions
     Create WebDriver    Chrome    options=${options}    alias=${alias}
     Go To    ${url}
