@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Common_Resources/CommonBrowser.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -158,13 +159,13 @@ Turn Camera ON And Verify Video visible
 Open and Position Browsers
     # Opens two browsers and positions them side by side.
     # Open first browser (normal mode)
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM    options=add_argument("--use-fake-ui-for-media-stream")    options=add_argument("--use-fake-device-for-media-stream")    options=add_experimental_option("prefs", {"profile.default_content_setting_values.media_stream_camera": 1, "profile.default_content_setting_values.media_stream_mic": 1})
+       Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM    options=add_argument("--use-fake-ui-for-media-stream")    options=add_argument("--use-fake-device-for-media-stream")    options=add_experimental_option("prefs", {"profile.default_content_setting_values.media_stream_camera": 1, "profile.default_content_setting_values.media_stream_mic": 1})
     Set Window Size    650    1200
     Set Window Position    0    0
     Log    Normal browser size and position set.
 
     # Open second browser (incognito mode)
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--use-fake-ui-for-media-stream")    options=add_argument("--use-fake-device-for-media-stream")    options=add_experimental_option("prefs", {"profile.default_content_setting_values.media_stream_camera": 1, "profile.default_content_setting_values.media_stream_mic": 1})
+        Open Incognito Browser With Unique Profile    https://app-dev.taskhuman.com/login    INC    options=add_argument("--use-fake-ui-for-media-stream")    options=add_argument("--use-fake-device-for-media-stream")    options=add_experimental_option("prefs", {"profile.default_content_setting_values.media_stream_camera": 1, "profile.default_content_setting_values.media_stream_mic": 1})
     Set Window Size    650    1200
     Set Window Position    650    0
     Log    Incognito browser size and position set.

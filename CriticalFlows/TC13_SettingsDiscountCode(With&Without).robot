@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Common_Resources/CommonBrowser.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -25,7 +26,7 @@ Goto Settings and logout as consumer
 
 *** Keywords ***
 Login as consumer
-    Open Browser    https://app-dev.taskhuman.com/login    chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Maximize Browser Window
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
 #    Sleep    5s

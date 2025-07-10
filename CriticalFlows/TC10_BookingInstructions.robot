@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    SeleniumLibrary
+Resource    ../Common_Resources/CommonBrowser.robot
 
 *** Variables ***
 ${CONSUMER_EMAIL}    raghuram.m+rc1@taskhuman.com
@@ -11,7 +12,7 @@ ${Expected Inst03}    If the coach doesn’t pick up the call, your minutes will
 
 *** Test Cases ***
 Open the browser and login as Consumer
-    Open Browser   https://app-dev.taskhuman.com/login    chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Maximize Browser Window
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
     Sleep    5s
