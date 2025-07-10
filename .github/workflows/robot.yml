@@ -1,0 +1,43 @@
+name: Robot Framework CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install robotframework
+          pip install robotframework-seleniumlibrary
+          pip install selenium
+
+      - name: Install Google Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Install ChromeDriver (manually matched to Chrome)
+        run: |
+          CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+')
+          echo "Detected Chrome version: $CHROME_VERSION"
+          curl -sSL https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION > version.txt
+          VERSION=$(cat version.txt)
+          wget https://chromedriver.storage.googleapis.com/${VERSION}/chromedriver_linux64.zip
+          unzip chromedriver_linux64.zip
+          sudo mv chromedriver /usr/local/bin/
+          chromedriver --version
+
+      - name: Run Robot Tests
+        run: robot CriticalFlows/
