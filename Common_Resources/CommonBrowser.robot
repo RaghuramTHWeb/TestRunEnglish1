@@ -12,8 +12,7 @@ Open Browser With Unique Profile
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method    ${options}    add_argument    --disable-dev-shm-usage
     Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
-    Call Method    ${options}    add_argument    --remote-debugging-port=9222
-    Create WebDriver    Chrome    options=${options}    alias=${alias}
+    Create WebDriver    Chrome    chrome_options=${options}    alias=${alias}
     Go To    ${url}
 
 Open Incognito Browser With Unique Profile
@@ -26,6 +25,5 @@ Open Incognito Browser With Unique Profile
     Call Method    ${options}    add_argument    --no-sandbox
     Call Method    ${options}    add_argument    --disable-dev-shm-usage
     Call Method    ${options}    add_argument    --disable-blink-features=AutomationControlled
-    Call Method    ${options}    add_argument    --remote-debugging-port=9222
-    Create WebDriver    Chrome    options=${options}    alias=${alias}
+    Create WebDriver    Chrome    chrome_options=${options}    alias=${alias}
     Go To    ${url}
