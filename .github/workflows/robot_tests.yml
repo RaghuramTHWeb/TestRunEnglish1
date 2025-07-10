@@ -1,3 +1,46 @@
-- name: Run Robot Framework tests
-  run: |
-    robot -L TRACE -d output/ CriticalFlows/
+name: Robot Framework Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install robotframework robotframework-seleniumlibrary webdriver-manager
+
+    - name: Check Versions
+      run: |
+        robot --version
+        pip list
+
+    - name: Setup Chrome and ChromeDriver
+      uses: browser-actions/setup-chrome@latest
+      with:
+        chrome-version: stable
+
+    - name: Run Robot Framework Tests
+      run: |
+        robot -L TRACE -d output/ CriticalFlows/
+
+    - name: Upload Robot Results
+      uses: actions/upload-artifact@v4
+      with:
+        name: robot-results
+        path: output/
+        if-no-files-found: ignore
