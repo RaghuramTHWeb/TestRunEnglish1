@@ -42,11 +42,13 @@ Open Browser With Unique Profile
 
     Create Directory    ${user_data_dir}
 
-    @{chrome_args}=    Create List
-    ...    --user-data-dir=${user_data_dir}
-    ...    @{CHROME_BASE_ARGS}
+    ${chrome_options}=    Create List
+    FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
+        Append To List    ${chrome_options}    ${arg}
+    END
+    Append To List    ${chrome_options}    --user-data-dir=${user_data_dir}
 
-    Open Browser    ${url}    chrome    alias=${browser_alias}    arguments=@{chrome_args}
+    Open Browser    ${url}    chrome    ${chrome_options}    alias=${browser_alias}
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${user_data_dir}
 
 Close And Clean All Browsers
