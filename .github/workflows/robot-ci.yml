@@ -30,6 +30,13 @@ jobs:
       - name: 🌐 Setup Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: ✅ Run Robot Framework Tests
+      - name: ✅ Run Robot Framework Tests in Headless Mode
         run: |
-          robot --outputdir results CriticalFlows
+          export ROBOT_HEADLESS="--headless=new"
+          robot --outputdir results Tests/
+
+      - name: 📤 Upload Robot Framework Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-results
+          path: results/
