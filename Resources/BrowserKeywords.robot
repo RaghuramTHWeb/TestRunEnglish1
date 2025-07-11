@@ -47,6 +47,7 @@ Open Browser With Unique Profile
         Append To List    ${chrome_options}    ${arg}
     END
     Append To List    ${chrome_options}    --user-data-dir=${user_data_dir}
+    ${options_str}=    Evaluate    " ".join(${chrome_options})
 
-    Open Browser    ${url}    chrome    @{chrome_options}    ${browser_alias}
+    Open Browser    ${url}    chrome    options=${options_str}    alias=${browser_alias}
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${user_data_dir}
