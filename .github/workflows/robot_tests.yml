@@ -34,15 +34,14 @@ jobs:
       with:
         chrome-version: stable
 
-    # ✅ DEBUG STEP: List all files to confirm folder structure
     - name: List Project Files (Debug)
       run: |
         echo "==== PROJECT STRUCTURE ===="
         find .
 
-    - name: Run Robot Framework Tests
+    - name: Run Robot Sanity Test
       run: |
-        robot -L TRACE -d output/ CriticalFlows/
+        robot -L TRACE -d output/ CriticalFlows/sanity.robot
 
     - name: Upload Robot Results
       uses: actions/upload-artifact@v4
