@@ -36,20 +36,22 @@ ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${browser_alias}=${NONE}
 
-    ${timestamp}=     Get Time    epoch
-    ${random}=        Generate Random String    5    [LETTERS]
+    ${timestamp}=    Get Time    epoch
+    ${random}=       Generate Random String    5    [LETTERS]
     ${user_data_dir}=    Set Variable    ${CURDIR}${/}chrome_profiles${/}${timestamp}_${random}
-
     Create Directory    ${user_data_dir}
 
-    ${chrome_args}=    Create List
-    FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
-        Append To List    ${chrome_args}    ${arg}
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    FOR    ${arg}    IN
+    ...    --disable-gpu
+    ...    --no-sandbox
+    ...    --disable-dev-shm-usage
+    ...    --window-size=1280,800
+    ...    --disable-extensions
+    ...    --disable-popup-blocking
+    ...    --disable-infobars
+    ...    --user-data-dir=${user_data_dir}
+        Call Method    ${chrome_options}    add_argument    ${arg}
     END
-    Append To List    ${chrome_args}    --user-data-dir=${user_data_dir}
 
-    ${chrome_options}=    Create Dictionary    args=${chrome_args}
-    ${capabilities}=    Create Dictionary    goog:chromeOptions=${chrome_options}
-
-    Open Browser    ${url}    chrome    desired_capabilities=${capabilities}    alias=${browser_alias}
-    Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${user_data_dir}
+    Open Browser    ${url}    browser=chrome    options=${chrome_options}    alias=${browser_alias}
