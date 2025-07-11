@@ -36,10 +36,10 @@ jobs:
 
     - name: List Project Files (Debug)
       run: |
-        echo "==== PROJECT STRUCTURE ===="
+        echo "==== CURRENT FILE STRUCTURE ===="
         find .
 
-    - name: Run Robot Sanity Test
+    - name: Run Robot Framework Tests
       run: |
         robot -L TRACE -d output/ CriticalFlows/sanity.robot
 
