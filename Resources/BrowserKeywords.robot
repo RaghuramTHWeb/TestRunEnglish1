@@ -42,12 +42,13 @@ Open Browser With Unique Profile
 
     Create Directory    ${user_data_dir}
 
-    ${chrome_options}=    Create List
-    FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
-        Append To List    ${chrome_options}    ${arg}
-    END
-    Append To List    ${chrome_options}    --user-data-dir=${user_data_dir}
-    ${options_str}=    Evaluate    " ".join(${chrome_options})
+    ${chrome_args}=    Create List
+    :FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
+    \    Append To List    ${chrome_args}    ${arg}
+    Append To List    ${chrome_args}    --user-data-dir=${user_data_dir}
 
-    Open Browser    ${url}    chrome    options=${options_str}    alias=${browser_alias}
+    ${chrome_options}=    Create Dictionary    args=${chrome_args}
+    ${capabilities}=    Create Dictionary    goog:chromeOptions=${chrome_options}
+
+    Open Browser    ${url}    chrome    desired_capabilities=${capabilities}    alias=${browser_alias}
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${user_data_dir}
