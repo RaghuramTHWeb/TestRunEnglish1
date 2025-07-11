@@ -30,14 +30,14 @@ jobs:
       - name: 🧹 Clean chrome_profiles folder
         run: rm -rf /tmp/chrome_profiles || true
 
-      - name: ✅ Run Only CriticalFlows Tests
+      - name: ✅ Run Robot Tests
         run: |
           export ROBOT_HEADLESS="--headless=new"
           robot --outputdir CriticalFlows/output CriticalFlows/
 
       - name: 📤 Upload Robot Logs
         if: always()
-        uses: actions/upload-artifact@v4  # ⬅️ Updated from v3 to v4
+        uses: actions/upload-artifact@v4
         with:
           name: criticalflows-results
           path: CriticalFlows/output
