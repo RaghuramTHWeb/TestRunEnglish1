@@ -3,13 +3,16 @@ name: Robot Framework Tests
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   run-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
-    - name: Checkout code
+    - name: Checkout Code
       uses: actions/checkout@v4
 
     - name: Set up Python
@@ -17,8 +20,9 @@ jobs:
       with:
         python-version: '3.11'
 
-    - name: Install Robot dependencies
+    - name: Install Dependencies
       run: |
+        pip install --upgrade pip
         pip install robotframework robotframework-seleniumlibrary webdriver-manager
 
     - name: Setup Chrome and ChromeDriver
@@ -28,14 +32,14 @@ jobs:
 
     - name: List Project Files (Debug)
       run: |
-        echo "==== PROJECT STRUCTURE ===="
+        echo "==== FILE STRUCTURE ===="
         find .
 
-    - name: Run Robot Framework Tests
+    - name: Run All Robot Framework Tests
       run: |
-        robot -L TRACE -d output/ CriticalFlows/sanity.robot
+        robot -L TRACE -d output/ CriticalFlows/
 
-    - name: Upload Robot Framework Results
+    - name: Upload Robot Results
       uses: actions/upload-artifact@v4
       with:
         name: robot-results
