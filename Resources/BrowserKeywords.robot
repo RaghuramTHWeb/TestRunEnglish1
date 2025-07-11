@@ -20,25 +20,23 @@ ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${alias}
 
+    ${is_ci}=    Run Keyword And Return Status    Environment Variable Should Be Set    GITHUB_ACTIONS
     ${timestamp}=    Get Time    epoch
     ${random}=       Generate Random String    5
     ${profile_dir}=  Set Variable    ${PROFILE_ROOT_DIR}/${timestamp}_${random}
-
-    ${exists}=    Run Keyword And Return Status    Directory Should Exist    ${PROFILE_ROOT_DIR}
-    Run Keyword If    not ${exists}    Create Directory    ${PROFILE_ROOT_DIR}
-    Create Directory    ${profile_dir}
 
     ${args}=    Create List
     FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
         Append To List    ${args}    ${arg}
     END
+
     Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --incognito
-    Append To List    ${args}    --user-data-dir=${profile_dir}
+    Run Keyword Unless    ${is_ci}    Append To List    ${args}    --user-data-dir=${profile_dir}
 
-    &{chrome options}=    Create Dictionary    args=${args}
-    &{desired caps}=    Create Dictionary    goog:chromeOptions=${chrome options}
+    ${options}=    Catenate    SEPARATOR=    @{args}
+    Log    Final Chrome Args: ${options}
 
-    Open Browser    ${url}    chrome    desired_capabilities=${desired caps}    alias=${alias}
+    Open Browser    ${url}    chrome    options=${options}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
 
 Close And Clean All Browsers

@@ -24,19 +24,11 @@ jobs:
           pip install --upgrade pip
           pip install robotframework selenium robotframework-seleniumlibrary chromedriver-autoinstaller
 
-      - name: 🧹 Clean chrome_profiles folder
-        run: rm -rf /tmp/chrome_profiles || true
-
       - name: 🌐 Setup Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: ✅ Run Robot Framework Tests in Headless Mode
+      - name: ✅ Run Robot Framework Tests
+        env:
+          ROBOT_HEADLESS: "--headless=new"
         run: |
-          export ROBOT_HEADLESS="--headless=new"
           robot --outputdir results Tests/
-
-      - name: 📤 Upload Robot Framework Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: robot-results
-          path: results/
