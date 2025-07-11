@@ -34,6 +34,12 @@ jobs:
       with:
         chrome-version: stable
 
+    # ✅ DEBUG STEP: List all files to confirm folder structure
+    - name: List Project Files (Debug)
+      run: |
+        echo "==== PROJECT STRUCTURE ===="
+        find .
+
     - name: Run Robot Framework Tests
       run: |
         robot -L TRACE -d output/ CriticalFlows/
