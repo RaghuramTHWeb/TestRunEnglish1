@@ -33,12 +33,12 @@ Library    BuiltIn
 ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
 
 *** Keywords ***
+*** Keywords ***
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${browser_alias}=${NONE}
 
-    ${timestamp}=    Get Time    epoch
-    ${random}=       Generate Random String    5    [LETTERS]
-    ${user_data_dir}=    Set Variable    /tmp/chrome_profiles/${timestamp}_${random}
+    ${uuid}=    Evaluate    __import__('uuid').uuid4().hex
+    ${user_data_dir}=    Set Variable    /tmp/chrome_profiles/${uuid}
     Create Directory    ${user_data_dir}
 
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
@@ -55,3 +55,4 @@ Open Browser With Unique Profile
     END
 
     Open Browser    ${url}    browser=chrome    options=${chrome_options}    alias=${browser_alias}
+
