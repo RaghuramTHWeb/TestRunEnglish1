@@ -38,9 +38,8 @@ Open Browser With Unique Profile
     END
     Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --incognito
     Append To List    ${args}    --user-data-dir=${profile_dir}
-
     ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
-    Call Method    ${chrome options}    add_argument    --headless=new
+    Append To List    ${args}    --headless=new
     FOR    ${arg}    IN    @{args}
         Call Method    ${chrome options}    add_argument    ${arg}
     END
