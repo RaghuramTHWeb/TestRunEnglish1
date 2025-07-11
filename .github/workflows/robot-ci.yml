@@ -30,9 +30,10 @@ jobs:
       - name: 🧹 Clean chrome_profiles folder
         run: rm -rf /tmp/chrome_profiles || true
 
-      - name: ✅ Run Robot Tests
+      - name: ✅ Run Robot Tests Headlessly
+        env:
+          ROBOT_HEADLESS: "--headless=new"  # ✅ Proper way to inject headless mode
         run: |
-          export ROBOT_HEADLESS="--headless=new"
           robot --outputdir CriticalFlows/output CriticalFlows/
 
       - name: 📤 Upload Robot Logs
