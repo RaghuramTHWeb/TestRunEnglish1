@@ -45,3 +45,4 @@ Close And Clean All Browsers
     ${exists}=    Run Keyword And Return Status    Directory Should Exist    ${profile}
     Run Keyword If    '${profile}' != 'NONE' and ${exists}    Remove Directory    ${profile}    recursive=True
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
+  #test
