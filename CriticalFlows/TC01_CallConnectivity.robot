@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Resources/BrowserKeywords.robot
-Suite Teardown    Close All Browsers
+Suite Teardown    Close And Clean All Browsers
 
 *** Variables ***
 ${ONLINE_TEXT}   You're now online!
@@ -118,10 +118,12 @@ Accept Call as Provider in Incognito
 Open and Position Browsers
     # Opens two browsers and positions them side by side.
     # Open first browser (normal mode)
-    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM # alias removed, passed as argument
+
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Set Window Size    650    1200
     Set Window Position    0    0
     Log    Normal browser size and position set.
+
 
     # Open second browser (incognito mode)
     # Changed to use Open Browser With Unique Profile
