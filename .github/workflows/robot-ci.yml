@@ -32,7 +32,7 @@ jobs:
 
       - name: ✅ Run Robot Tests Headlessly
         run: |
-          export ROBOT_HEADLESS="--headless=new"
+          export ROBOT_HEADLESS="--headless=chrome"
           robot --outputdir CriticalFlows/output CriticalFlows/
 
       - name: 📤 Upload Robot Logs

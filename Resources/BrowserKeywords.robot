@@ -14,8 +14,8 @@ Library    Collections
 ...    --window-size=1920,1080
 ...    --remote-debugging-port=0
 ...    --disable-dev-shm-usage
-...    --single-process
 ...    --disable-background-networking
+# Removed --single-process for stability
 
 ${PROFILE_ROOT_DIR}    /tmp/chrome_profiles
 ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
@@ -57,7 +57,6 @@ Open Browser With Unique Profile
     Open Browser    url=${url}    browser=chrome    options=${chrome options}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
 
-
 Close And Clean All Browsers
     Close All Browsers
     ${profile}=    Set Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}
@@ -66,3 +65,11 @@ Close And Clean All Browsers
         Remove Directory    ${profile}    recursive=True
     END
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
+
+Safe Capture Screenshot
+    ${status}=    Run Keyword And Return Status    Get Location
+    IF    ${status}
+        Capture Page Screenshot
+    ELSE
+        Log    Skipping screenshot: browser session is invalid.    WARN
+    END
