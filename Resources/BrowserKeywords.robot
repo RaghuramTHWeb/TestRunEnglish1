@@ -38,7 +38,7 @@ Open Browser With Unique Profile
 
     ${timestamp}=    Get Time    epoch
     ${random}=       Generate Random String    5    [LETTERS]
-    ${user_data_dir}=    Set Variable    ${CURDIR}${/}chrome_profiles${/}${timestamp}_${random}
+    ${user_data_dir}=    Set Variable    /tmp/chrome_profiles/${timestamp}_${random}
     Create Directory    ${user_data_dir}
 
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
