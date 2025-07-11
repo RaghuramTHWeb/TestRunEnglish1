@@ -27,8 +27,10 @@ Open Browser With Unique Profile
     ${uuid}=    Evaluate    __import__('uuid').uuid4().hex
     ${profile_dir}=    Set Variable    ${PROFILE_ROOT_DIR}/${alias}_${uuid}
 
-    Run Keyword Unless    Directory Should Exist    ${PROFILE_ROOT_DIR}    Create Directory    ${PROFILE_ROOT_DIR}
+    ${exists}=    Run Keyword And Return Status    Directory Should Exist    ${PROFILE_ROOT_DIR}
+    Run Keyword Unless    ${exists}    Create Directory    ${PROFILE_ROOT_DIR}
     Create Directory    ${profile_dir}
+
 
     ${args}=    Create List
     FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
