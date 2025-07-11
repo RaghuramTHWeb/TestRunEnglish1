@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Resources/BrowserKeywords.robot
-Suite Teardown    Close And Clean All Browsers
+Suite Teardown    Close All Browsers
 
 *** Variables ***
 ${ONLINE_TEXT}   You're now online!
