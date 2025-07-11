@@ -1,4 +1,4 @@
-name: 🧪 Run Robot Framework CI Tests
+name: 🧪 Run Robot Framework Tests (CriticalFlows Only)
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: 📦 Install Dependencies
+      - name: 📦 Install Robot Dependencies
         run: |
           pip install --upgrade pip
           pip install robotframework selenium robotframework-seleniumlibrary chromedriver-autoinstaller
@@ -27,8 +27,17 @@ jobs:
       - name: 🌐 Setup Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: ✅ Run Robot Framework Tests
-        env:
-          ROBOT_HEADLESS: "--headless=new"
+      - name: 🧹 Clean chrome_profiles folder
+        run: rm -rf /tmp/chrome_profiles || true
+
+      - name: ✅ Run Only CriticalFlows Tests
         run: |
-          robot --outputdir results Tests/
+          export ROBOT_HEADLESS="--headless=new"
+          robot --outputdir CriticalFlows/output CriticalFlows/
+
+      - name: 📤 Upload Robot Logs
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: criticalflows-results
+          path: CriticalFlows/output
