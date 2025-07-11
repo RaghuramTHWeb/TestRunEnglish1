@@ -24,13 +24,12 @@ jobs:
           pip install --upgrade pip
           pip install robotframework selenium robotframework-seleniumlibrary chromedriver-autoinstaller
 
+      - name: 🧹 Clean chrome_profiles
+        run: rm -rf /tmp/chrome_profiles || true
+
       - name: 🌐 Setup Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: 🧹 Clean /tmp/chrome_profiles
-        run: rm -rf /tmp/chrome_profiles || true
-
       - name: ✅ Run Robot Framework Tests
         run: |
-          cd RaghuProject01
           robot --outputdir results CriticalFlows/
