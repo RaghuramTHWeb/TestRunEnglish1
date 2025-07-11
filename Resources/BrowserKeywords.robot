@@ -20,10 +20,13 @@ ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${alias}
 
-    ${is_ci}=    Run Keyword And Return Status    Environment Variable Should Be Set    GITHUB_ACTIONS
     ${timestamp}=    Get Time    epoch
     ${random}=       Generate Random String    5
-    ${profile_dir}=  Set Variable    ${PROFILE_ROOT_DIR}/${timestamp}_${random}
+    ${profile_dir}=  Set Variable    ${PROFILE_ROOT_DIR}/${alias}_${timestamp}_${random}
+
+    ${exists}=    Run Keyword And Return Status    Directory Should Exist    ${PROFILE_ROOT_DIR}
+    Run Keyword Unless    ${exists}    Create Directory    ${PROFILE_ROOT_DIR}
+    Create Directory    ${profile_dir}
 
     ${args}=    Create List
     FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
@@ -31,13 +34,21 @@ Open Browser With Unique Profile
     END
 
     Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --incognito
-    Run Keyword Unless    ${is_ci}    Append To List    ${args}    --user-data-dir=${profile_dir}
+    Append To List    ${args}    --user-data-dir=${profile_dir}
 
-    ${options}=    Catenate    SEPARATOR=    @{args}
-    Log    Final Chrome Args: ${options}
+    ${options}=    Join Chrome Args    @{args}
+    Log    Final Chrome options: ${options}
 
     Open Browser    ${url}    chrome    options=${options}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
+
+Join Chrome Args
+    [Arguments]    @{args}
+    ${joined}=    Set Variable    ${EMPTY}
+    FOR    ${item}    IN    @{args}
+        ${joined}=    Set Variable    ${joined} ${item}
+    END
+    [Return]    ${joined}
 
 Close And Clean All Browsers
     Close All Browsers
@@ -45,4 +56,3 @@ Close And Clean All Browsers
     ${exists}=    Run Keyword And Return Status    Directory Should Exist    ${profile}
     Run Keyword If    '${profile}' != 'NONE' and ${exists}    Remove Directory    ${profile}    recursive=True
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
-  #test
