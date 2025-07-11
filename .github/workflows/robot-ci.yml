@@ -37,7 +37,7 @@ jobs:
 
       - name: 📤 Upload Robot Logs
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4  # ⬅️ Updated from v3 to v4
         with:
           name: criticalflows-results
           path: CriticalFlows/output
