@@ -32,15 +32,14 @@ Open Browser With Unique Profile
     FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
         Append To List    ${args}    ${arg}
     END
-
     Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --incognito
     Append To List    ${args}    --user-data-dir=${profile_dir}
 
-    ${options}=    Join Chrome Args    @{args}
-    Log    Final Chrome options: ${options}
+    Log    Final Chrome args: ${args}
 
-    Open Browser    ${url}    chrome    options=${options}    alias=${alias}
+    Open Browser    ${url}    chrome    options=add_argument    arguments=${args}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
+
 
 Join Chrome Args
     [Arguments]    @{args}
