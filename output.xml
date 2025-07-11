@@ -1,63 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1.1 (Python 3.12.4 on win32)" generated="2025-07-11T11:57:49.977600" rpa="false" schemaversion="5">
+<robot generator="Robot 7.1.1 (Python 3.12.4 on win32)" generated="2025-07-11T14:52:30.604282" rpa="false" schemaversion="5">
 <suite id="s1" name="RaghuProject01" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01">
 <suite id="s1-s1" name="CriticalFlows" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\CriticalFlows">
-<suite id="s1-s1-s1" name="TC01 CallConnectivity" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\CriticalFlows\TC01_CallConnectivity.robot">
-<test id="s1-s1-s1-t1" name="Open and Position Browsers" line="118">
+<suite id="s1-s1-s1" name="TC02 BookFromProviderAvailabiltyCalander" source="C:\Users\Lenovo\PycharmProjects\RaghuProject01\CriticalFlows\TC02_BookFromProviderAvailabiltyCalander.robot">
+<test id="s1-s1-s1-t1" name="Open the browser and login as Consumer" line="14">
 <kw name="Open Browser With Unique Profile" owner="BrowserKeywords">
-<kw name="Get Time" owner="BuiltIn">
-<msg time="2025-07-11T11:57:50.287951" level="INFO">${timestamp} = 1752215270</msg>
-<var>${timestamp}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.287951" elapsed="0.000000"/>
-</kw>
-<kw name="Generate Random String" owner="String">
-<msg time="2025-07-11T11:57:50.287951" level="INFO">${random} = Q3dJm</msg>
-<var>${random}</var>
-<arg>5</arg>
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.287951" elapsed="0.000000"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-11T14:52:30.791584" level="INFO">${uuid} = d8dbf93a01bd4583b5ed4e4b89253854</msg>
+<var>${uuid}</var>
+<arg>__import__('uuid').uuid4().hex</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-07-11T11:57:50.287951" level="INFO">${profile_dir} = /tmp/chrome_profiles/1752215270_Q3dJm</msg>
+<msg time="2025-07-11T14:52:30.791584" level="INFO">${profile_dir} = /tmp/chrome_profiles/NORM_d8dbf93a01bd4583b5ed4e4b89253854</msg>
 <var>${profile_dir}</var>
-<arg>${PROFILE_ROOT_DIR}/${timestamp}_${random}</arg>
+<arg>${PROFILE_ROOT_DIR}/${alias}_${uuid}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.287951" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <kw name="Run Keyword And Return Status" owner="BuiltIn">
 <kw name="Directory Should Exist" owner="OperatingSystem">
-<msg time="2025-07-11T11:57:50.287951" level="INFO" html="true">Directory '&lt;a href="file://C:\tmp\chrome_profiles"&gt;C:\tmp\chrome_profiles&lt;/a&gt;' exists.</msg>
+<msg time="2025-07-11T14:52:30.791584" level="INFO" html="true">Directory '&lt;a href="file://C:\tmp\chrome_profiles"&gt;C:\tmp\chrome_profiles&lt;/a&gt;' exists.</msg>
 <arg>${PROFILE_ROOT_DIR}</arg>
 <doc>Fails unless the given path points to an existing directory.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.287951" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
-<msg time="2025-07-11T11:57:50.287951" level="INFO">${exists} = True</msg>
+<msg time="2025-07-11T14:52:30.791584" level="INFO">${exists} = True</msg>
 <var>${exists}</var>
 <arg>Directory Should Exist</arg>
 <arg>${PROFILE_ROOT_DIR}</arg>
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.287951" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>not ${exists}</arg>
-<arg>Create Directory</arg>
-<arg>${PROFILE_ROOT_DIR}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.287951" elapsed="0.000000"/>
-</kw>
+<if>
+<branch type="IF" condition="not ${exists}">
 <kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-07-11T11:57:50.289961" level="INFO" html="true">Created directory '&lt;a href="file://C:\tmp\chrome_profiles\1752215270_Q3dJm"&gt;C:\tmp\chrome_profiles\1752215270_Q3dJm&lt;/a&gt;'.</msg>
+<arg>${PROFILE_ROOT_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="NOT RUN" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</if>
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-07-11T14:52:30.791584" level="INFO" html="true">Created directory '&lt;a href="file://C:\tmp\chrome_profiles\NORM_d8dbf93a01bd4583b5ed4e4b89253854"&gt;C:\tmp\chrome_profiles\NORM_d8dbf93a01bd4583b5ed4e4b89253854&lt;/a&gt;'.</msg>
 <arg>${profile_dir}</arg>
 <doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.289961" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2025-07-11T11:57:50.290636" level="INFO">${args} = []</msg>
+<msg time="2025-07-11T14:52:30.791584" level="INFO">${args} = []</msg>
 <var>${args}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <for flavor="IN">
 <iter>
@@ -65,694 +62,405 @@
 <arg>${args}</arg>
 <arg>${arg}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <var name="${arg}">--disable-popup-blocking</var>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Append To List" owner="Collections">
 <arg>${args}</arg>
 <arg>${arg}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <var name="${arg}">--disable-extensions</var>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Append To List" owner="Collections">
 <arg>${args}</arg>
 <arg>${arg}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <var name="${arg}">--disable-gpu</var>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Append To List" owner="Collections">
 <arg>${args}</arg>
 <arg>${arg}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <var name="${arg}">--no-sandbox</var>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </iter>
 <iter>
 <kw name="Append To List" owner="Collections">
 <arg>${args}</arg>
 <arg>${arg}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
 <var name="${arg}">--window-size=1920,1080</var>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${args}</arg>
+<arg>${arg}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--remote-debugging-port=0</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${args}</arg>
+<arg>${arg}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-dev-shm-usage</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Append To List" owner="Collections">
+<arg>${args}</arg>
+<arg>${arg}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-background-networking</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </iter>
 <var>${arg}</var>
 <value>@{CHROME_BASE_ARGS}</value>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </for>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>'${alias}' == 'INC'</arg>
-<arg>Append To List</arg>
+<if>
+<branch type="IF" condition="'${alias}' == 'INC'">
+<kw name="Append To List" owner="Collections">
 <arg>${args}</arg>
 <arg>--incognito</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
+<status status="NOT RUN" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</if>
 <kw name="Append To List" owner="Collections">
 <arg>${args}</arg>
 <arg>--user-data-dir=${profile_dir}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-11T11:57:50.290636" level="INFO">&amp;{chrome options} = { args=['--disable-popup-blocking', '--disable-extensions', '--disable-gpu', '--no-sandbox', '--window-size=1920,1080', '--user-data-dir=/tmp/chrome_profiles/1752215270_Q3dJm'] }</msg>
-<var>&amp;{chrome options}</var>
-<arg>args=${args}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-07-11T14:52:30.791584" level="INFO">${chrome options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000162390A7980&gt;</msg>
+<var>${chrome options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-11T11:57:50.290636" level="INFO">&amp;{desired caps} = { goog:chromeOptions={'args': ['--disable-popup-blocking', '--disable-extensions', '--disable-gpu', '--no-sandbox', '--window-size=1920,1080', '--user-data-dir=/tmp/chrome_profiles/1752215270_Q3dJm']}...</msg>
-<var>&amp;{desired caps}</var>
-<arg>goog:chromeOptions=${chrome options}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="0.000000"/>
+<kw name="Get Environment Variable" owner="OperatingSystem">
+<msg time="2025-07-11T14:52:30.791584" level="INFO">${headless} = None</msg>
+<var>${headless}</var>
+<arg>ROBOT_HEADLESS</arg>
+<arg>default=None</arg>
+<doc>Returns the value of an environment variable with the given name.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
 </kw>
+<if>
+<branch type="IF" condition="'${headless}' != 'None'">
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${headless}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</if>
+<for flavor="IN">
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-popup-blocking</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-extensions</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-gpu</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--no-sandbox</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--window-size=1920,1080</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--remote-debugging-port=0</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-dev-shm-usage</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--disable-background-networking</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<iter>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</kw>
+<var name="${arg}">--user-data-dir=/tmp/chrome_profiles/NORM_d8dbf93a01bd4583b5ed4e4b89253854</var>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</iter>
+<var>${arg}</var>
+<value>@{args}</value>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="0.000000"/>
+</for>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:57:50.290636" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
-<msg time="2025-07-11T11:57:50.290636" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
-<arg>${url}</arg>
-<arg>chrome</arg>
-<arg>desired_capabilities=${desired caps}</arg>
+<msg time="2025-07-11T14:52:30.791584" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
+<arg>url=${url}</arg>
+<arg>browser=chrome</arg>
+<arg>options=${chrome options}</arg>
 <arg>alias=${alias}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-11T11:57:50.290636" elapsed="6.007399"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="5.756233"/>
 </kw>
 <kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.298035" level="INFO">${_CURRENT_BROWSER_USER_DATA_DIR} = /tmp/chrome_profiles/1752215270_Q3dJm</msg>
+<msg time="2025-07-11T14:52:36.548941" level="INFO">${_CURRENT_BROWSER_USER_DATA_DIR} = /tmp/chrome_profiles/NORM_d8dbf93a01bd4583b5ed4e4b89253854</msg>
 <arg>${_CURRENT_BROWSER_USER_DATA_DIR}</arg>
 <arg>${profile_dir}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.298035" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:36.548941" elapsed="0.000000"/>
 </kw>
 <arg>https://app-dev.taskhuman.com/login</arg>
 <arg>NORM</arg>
-<status status="PASS" start="2025-07-11T11:57:50.286270" elapsed="6.011765"/>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="5.757357"/>
 </kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>650</arg>
-<arg>1200</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.298035" elapsed="0.370413"/>
-</kw>
-<kw name="Set Window Position" owner="SeleniumLibrary">
-<arg>0</arg>
-<arg>0</arg>
-<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.669503" elapsed="0.026666"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.696169" level="INFO">Normal browser size and position set.</msg>
-<arg>Normal browser size and position set.</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.696169" elapsed="0.000000"/>
-</kw>
-<kw name="Open Browser With Unique Profile" owner="BrowserKeywords">
-<kw name="Get Time" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.705361" level="INFO">${timestamp} = 1752215276</msg>
-<var>${timestamp}</var>
-<arg>epoch</arg>
-<doc>Returns the given time in the requested format.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.703351" elapsed="0.002010"/>
-</kw>
-<kw name="Generate Random String" owner="String">
-<msg time="2025-07-11T11:57:56.706386" level="INFO">${random} = EdDrw</msg>
-<var>${random}</var>
-<arg>5</arg>
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.705361" elapsed="0.001025"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.707809" level="INFO">${profile_dir} = /tmp/chrome_profiles/1752215276_EdDrw</msg>
-<var>${profile_dir}</var>
-<arg>${PROFILE_ROOT_DIR}/${timestamp}_${random}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.706941" elapsed="0.000868"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Directory Should Exist" owner="OperatingSystem">
-<msg time="2025-07-11T11:57:56.709328" level="INFO" html="true">Directory '&lt;a href="file://C:\tmp\chrome_profiles"&gt;C:\tmp\chrome_profiles&lt;/a&gt;' exists.</msg>
-<arg>${PROFILE_ROOT_DIR}</arg>
-<doc>Fails unless the given path points to an existing directory.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.707809" elapsed="0.001519"/>
-</kw>
-<msg time="2025-07-11T11:57:56.709328" level="INFO">${exists} = True</msg>
-<var>${exists}</var>
-<arg>Directory Should Exist</arg>
-<arg>${PROFILE_ROOT_DIR}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.707809" elapsed="0.001519"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>not ${exists}</arg>
-<arg>Create Directory</arg>
-<arg>${PROFILE_ROOT_DIR}</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.709328" elapsed="0.000000"/>
-</kw>
-<kw name="Create Directory" owner="OperatingSystem">
-<msg time="2025-07-11T11:57:56.709328" level="INFO" html="true">Created directory '&lt;a href="file://C:\tmp\chrome_profiles\1752215276_EdDrw"&gt;C:\tmp\chrome_profiles\1752215276_EdDrw&lt;/a&gt;'.</msg>
-<arg>${profile_dir}</arg>
-<doc>Creates the specified directory.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.709328" elapsed="0.002173"/>
-</kw>
-<kw name="Create List" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.711501" level="INFO">${args} = []</msg>
-<var>${args}</var>
-<doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>${arg}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</kw>
-<var name="${arg}">--disable-popup-blocking</var>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>${arg}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</kw>
-<var name="${arg}">--disable-extensions</var>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>${arg}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</kw>
-<var name="${arg}">--disable-gpu</var>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>${arg}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</kw>
-<var name="${arg}">--no-sandbox</var>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>${arg}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</kw>
-<var name="${arg}">--window-size=1920,1080</var>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</iter>
-<var>${arg}</var>
-<value>@{CHROME_BASE_ARGS}</value>
-<status status="PASS" start="2025-07-11T11:57:56.711501" elapsed="0.000000"/>
-</for>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>--incognito</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.715480" elapsed="0.000617"/>
-</kw>
-<arg>'${alias}' == 'INC'</arg>
-<arg>Append To List</arg>
-<arg>${args}</arg>
-<arg>--incognito</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.715480" elapsed="0.000617"/>
-</kw>
-<kw name="Append To List" owner="Collections">
-<arg>${args}</arg>
-<arg>--user-data-dir=${profile_dir}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.716097" elapsed="0.000000"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.716097" level="INFO">&amp;{chrome options} = { args=['--disable-popup-blocking', '--disable-extensions', '--disable-gpu', '--no-sandbox', '--window-size=1920,1080', '--incognito', '--user-data-dir=/tmp/chrome_profiles/1752215276_EdDrw'] }</msg>
-<var>&amp;{chrome options}</var>
-<arg>args=${args}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.716097" elapsed="0.000000"/>
-</kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-07-11T11:57:56.716097" level="INFO">&amp;{desired caps} = { goog:chromeOptions={'args': ['--disable-popup-blocking', '--disable-extensions', '--disable-gpu', '--no-sandbox', '--window-size=1920,1080', '--incognito', '--user-data-dir=/tmp/chrome_profiles/1752...</msg>
-<var>&amp;{desired caps}</var>
-<arg>goog:chromeOptions=${chrome options}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.716097" elapsed="0.000000"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:57:56.716097" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
-<msg time="2025-07-11T11:57:56.720927" level="INFO">Opening browser 'chrome' to base url 'https://app-dev.taskhuman.com/login'.</msg>
-<arg>${url}</arg>
-<arg>chrome</arg>
-<arg>desired_capabilities=${desired caps}</arg>
-<arg>alias=${alias}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-07-11T11:57:56.716097" elapsed="4.674670"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-07-11T11:58:01.390767" level="INFO">${_CURRENT_BROWSER_USER_DATA_DIR} = /tmp/chrome_profiles/1752215276_EdDrw</msg>
-<arg>${_CURRENT_BROWSER_USER_DATA_DIR}</arg>
-<arg>${profile_dir}</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-07-11T11:58:01.390767" elapsed="0.000000"/>
-</kw>
-<arg>https://app-dev.taskhuman.com/login</arg>
-<arg>INC</arg>
-<status status="PASS" start="2025-07-11T11:57:56.703351" elapsed="4.687416"/>
-</kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>650</arg>
-<arg>1200</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-07-11T11:58:01.390767" elapsed="0.385536"/>
-</kw>
-<kw name="Set Window Position" owner="SeleniumLibrary">
-<arg>650</arg>
-<arg>0</arg>
-<doc>Sets window position using ``x`` and ``y`` coordinates.</doc>
-<status status="PASS" start="2025-07-11T11:58:01.776303" elapsed="0.032738"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-07-11T11:58:01.812295" level="INFO">Incognito browser size and position set.</msg>
-<arg>Incognito browser size and position set.</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-07-11T11:58:01.809041" elapsed="0.003254"/>
-</kw>
-<status status="PASS" start="2025-07-11T11:57:50.286270" elapsed="11.526025"/>
-</test>
-<test id="s1-s1-s1-t2" name="Login as Provider in Incognito Mode" line="136">
-<kw name="Login as Provider in Incognito">
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>INC</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2025-07-11T11:58:01.817565" elapsed="0.000000"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-11T14:52:36.549952" elapsed="0.054039"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<arg>xpath=//div[@class='Login-module__signup-text css-0']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-11T11:58:01.819574" elapsed="1.410242"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:03.229816" level="INFO">Clicking element 'xpath://div[@class='Login-module__signup-text css-0']'.</msg>
-<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.229816" elapsed="0.130916"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='email']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.360732" elapsed="0.025430"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:03.386162" level="INFO">Clicking element 'xpath=//input[@name='email']'.</msg>
-<arg>xpath=//input[@name='email']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.386162" elapsed="0.066043"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:03.452205" level="INFO">Typing text 'raghuram.m+rp1@taskhuman.com' into text field 'xpath=//input[@name='email']'.</msg>
-<arg>xpath=//input[@name='email']</arg>
-<arg>${PROVIDER_EMAIL}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.452205" elapsed="0.273839"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='password']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.726044" elapsed="0.033330"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:03.759374" level="INFO">Clicking element 'xpath=//input[@name='password']'.</msg>
-<arg>xpath=//input[@name='password']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.759374" elapsed="0.074329"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:03.836247" level="INFO">Typing text 'asdfgh@12345A' into text field 'xpath=//input[@name='password']'.</msg>
-<arg>xpath=//input[@name='password']</arg>
-<arg>${PROVIDER_PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-11T11:58:03.835214" elapsed="0.284934"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath://button[@value='submit']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-07-11T11:58:04.120148" elapsed="0.026163"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:04.146311" level="INFO">Clicking element 'xpath://button[@value='submit']'.</msg>
-<arg>xpath://button[@value='submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-07-11T11:58:04.146311" elapsed="0.077240"/>
+<status status="PASS" start="2025-07-11T14:52:36.606001" elapsed="2.485167"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2025-07-11T11:58:07.224770" level="INFO">Slept 3 seconds.</msg>
+<msg time="2025-07-11T14:52:42.092536" level="INFO">Slept 3 seconds.</msg>
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-07-11T11:58:04.224029" elapsed="3.000741"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.117581" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.117581" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.101)
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09dea]
-	(No symbol) [0x0x7ff6d4ef5f15]
-	(No symbol) [0x0x7ff6d4f1abf4]
-	(No symbol) [0x0x7ff6d4f8fa85]
-	(No symbol) [0x0x7ff6d4faff72]
-	(No symbol) [0x0x7ff6d4f88243]
-	(No symbol) [0x0x7ff6d4f51431]
-	(No symbol) [0x0x7ff6d4f521c3]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	GetHandleVerifier [0x0x7ff6d515faf4+112628]
-	GetHandleVerifier [0x0x7ff6d515fca9+113065]
-	GetHandleVerifier [0x0x7ff6d5146c78+10616]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>xpath=//*[text()="${ONLINE_TEXT}"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="FAIL" start="2025-07-11T11:58:07.226343" elapsed="7.931270">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.101)
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09dea]
-	(No symbol) [0x0x7ff6d4ef5f15]
-	(No symbol) [0x0x7ff6d4f1abf4]
-	(No symbol) [0x0x7ff6d4f8fa85]
-	(No symbol) [0x0x7ff6d4faff72]
-	(No symbol) [0x0x7ff6d4f88243]
-	(No symbol) [0x0x7ff6d4f51431]
-	(No symbol) [0x0x7ff6d4f521c3]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	GetHandleVerifier [0x0x7ff6d515faf4+112628]
-	GetHandleVerifier [0x0x7ff6d515fca9+113065]
-	GetHandleVerifier [0x0x7ff6d5146c78+10616]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<msg time="2025-07-11T11:58:15.158420" level="INFO">${online_status_present} = False</msg>
-<var>${online_status_present}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>xpath=//*[text()="${ONLINE_TEXT}"]</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-07-11T11:58:07.225306" elapsed="7.933114"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.190424" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.190424" level="FAIL">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>xpath=//*[text()="${OFFLINE_TEXT}"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.158420" elapsed="0.032004">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<msg time="2025-07-11T11:58:15.190424" level="INFO">${offline_status_present} = False</msg>
-<var>${offline_status_present}</var>
-<arg>Wait Until Page Contains Element</arg>
-<arg>xpath=//*[text()="${OFFLINE_TEXT}"]</arg>
-<arg>10s</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.158420" elapsed="0.032004"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${offline_status_present}</arg>
-<arg>Make Online</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.190424" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<arg>${online_status_present}</arg>
-<arg>Provider is Online</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.190424" elapsed="0.004989"/>
-</kw>
-<status status="PASS" start="2025-07-11T11:58:01.817565" elapsed="13.377848"/>
-</kw>
-<status status="PASS" start="2025-07-11T11:58:01.815400" elapsed="13.380013"/>
-</test>
-<test id="s1-s1-s1-t3" name="Login as Consumer in Normal Mode" line="140">
-<kw name="Login as Consumer">
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>NORM</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.197906" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.326454" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.326454" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.101)
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09dea]
-	(No symbol) [0x0x7ff6d4ef5f15]
-	(No symbol) [0x0x7ff6d4f1abf4]
-	(No symbol) [0x0x7ff6d4f8fa85]
-	(No symbol) [0x0x7ff6d4faff72]
-	(No symbol) [0x0x7ff6d4f88243]
-	(No symbol) [0x0x7ff6d4f51431]
-	(No symbol) [0x0x7ff6d4f521c3]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	GetHandleVerifier [0x0x7ff6d515faf4+112628]
-	GetHandleVerifier [0x0x7ff6d515fca9+113065]
-	GetHandleVerifier [0x0x7ff6d5146c78+10616]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.197906" elapsed="0.138221">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.101)
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09dea]
-	(No symbol) [0x0x7ff6d4ef5f15]
-	(No symbol) [0x0x7ff6d4f1abf4]
-	(No symbol) [0x0x7ff6d4f8fa85]
-	(No symbol) [0x0x7ff6d4faff72]
-	(No symbol) [0x0x7ff6d4f88243]
-	(No symbol) [0x0x7ff6d4f51431]
-	(No symbol) [0x0x7ff6d4f521c3]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	GetHandleVerifier [0x0x7ff6d515faf4+112628]
-	GetHandleVerifier [0x0x7ff6d515fca9+113065]
-	GetHandleVerifier [0x0x7ff6d5146c78+10616]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
+<status status="PASS" start="2025-07-11T14:52:39.091168" elapsed="3.001368"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath://div[@class='Login-module__signup-text css-0']</arg>
+<msg time="2025-07-11T14:52:42.092536" level="INFO">Clicking element 'xpath=//div[@class='Login-module__signup-text css-0']'.</msg>
+<arg>xpath=//div[@class='Login-module__signup-text css-0']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.336127" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='email']</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.336127" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='email']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.336127" elapsed="0.000000"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='email']</arg>
-<arg>${CONSUMER_EMAIL}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='password']</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='password']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>xpath=//input[@name='password']</arg>
-<arg>${CONSUMER_PASSWORD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath://button[@value='submit']</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath://button[@value='submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:42.092536" elapsed="0.106464"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T14:52:45.200412" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T14:52:42.200005" elapsed="3.000407"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@name='email']</arg>
+<arg>8s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T14:52:45.200412" elapsed="0.015649"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T14:52:48.216587" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T14:52:45.216061" elapsed="3.000526"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:52:48.217610" level="INFO">Typing text 'raghuram.m+rc1@taskhuman.com' into text field 'xpath=//input[@name='email']'.</msg>
+<arg>xpath=//input[@name='email']</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T14:52:48.217610" elapsed="0.202453"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:52:48.421066" level="INFO">Typing text 'asdfgh@12345Q' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>xpath=//input[@name='password']</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T14:52:48.421066" elapsed="0.135136"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:52:48.558208" level="INFO">Clicking element 'xpath=//button[@value='submit']'.</msg>
+<arg>xpath=//button[@value='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T14:52:48.556202" elapsed="0.061564"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T14:52:50.620777" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T14:52:48.618908" elapsed="2.001869"/>
+</kw>
+<status status="PASS" start="2025-07-11T14:52:30.791584" elapsed="19.830252"/>
+</test>
+<test id="s1-s1-s1-t2" name="Check months are scrollable left to right and vice versa" line="27">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:52:50.625774" level="INFO">Opening url 'https://app-dev.taskhuman.com/profile/5466'</msg>
+<arg>https://app-dev.taskhuman.com/profile/5466</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-11T14:52:50.625774" elapsed="1.972220"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T14:52:54.599362" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-07-11T14:52:52.598996" elapsed="2.000366"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[@data-testid="availability"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-11T14:52:54.602592" elapsed="2.002408"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:52:56.606001" level="INFO">Clicking element 'xpath=//div[@data-testid="availability"]'.</msg>
+<arg>xpath=//div[@data-testid="availability"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-11T14:52:56.606001" elapsed="0.144844"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-07-11T14:53:00.752082" level="INFO">Slept 4 seconds.</msg>
 <arg>4s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.338046" elapsed="0.000000"/>
+<status status="PASS" start="2025-07-11T14:52:56.751212" elapsed="4.000870"/>
 </kw>
-<status status="FAIL" start="2025-07-11T11:58:15.197906" elapsed="0.140140">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:53:17.927841" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<msg time="2025-07-11T14:53:17.928850" level="FAIL">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09dea]
+	(No symbol) [0x0x7ff6d4ef5f15]
+	(No symbol) [0x0x7ff6d4f1abf4]
+	(No symbol) [0x0x7ff6d4f8fa85]
+	(No symbol) [0x0x7ff6d4faff72]
+	(No symbol) [0x0x7ff6d4f88243]
+	(No symbol) [0x0x7ff6d4f51431]
+	(No symbol) [0x0x7ff6d4f521c3]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	GetHandleVerifier [0x0x7ff6d515faf4+112628]
+	GetHandleVerifier [0x0x7ff6d515fca9+113065]
+	GetHandleVerifier [0x0x7ff6d5146c78+10616]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<arg>xpath=(//div[contains(@class, 'Calendar-module__calendar_day_number css-0')])[2]</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-11T14:53:00.753387" elapsed="17.180293">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
 from disconnected: not connected to DevTools
   (Session info: chrome=138.0.7204.101)
 Stacktrace:
@@ -778,434 +486,104 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </status>
 </kw>
-<status status="FAIL" start="2025-07-11T11:58:15.196449" elapsed="0.143689">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.101)
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09dea]
-	(No symbol) [0x0x7ff6d4ef5f15]
-	(No symbol) [0x0x7ff6d4f1abf4]
-	(No symbol) [0x0x7ff6d4f8fa85]
-	(No symbol) [0x0x7ff6d4faff72]
-	(No symbol) [0x0x7ff6d4f88243]
-	(No symbol) [0x0x7ff6d4f51431]
-	(No symbol) [0x0x7ff6d4f521c3]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	GetHandleVerifier [0x0x7ff6d515faf4+112628]
-	GetHandleVerifier [0x0x7ff6d515fca9+113065]
-	GetHandleVerifier [0x0x7ff6d5146c78+10616]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</test>
-<test id="s1-s1-s1-t4" name="Goto Provider Profile and make online if found offline" line="144">
-<kw name="Goto Provider Profile">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.340138" level="INFO">Opening url 'https://app-dev.taskhuman.com/profile/5466/about'</msg>
-<msg time="2025-07-11T11:58:15.377971" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.377971" level="FAIL">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>https://app-dev.taskhuman.com/profile/5466/about</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.340138" elapsed="0.037833">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.377971" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-07-11T11:58:15.340138" elapsed="0.037833">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<status status="FAIL" start="2025-07-11T11:58:15.340138" elapsed="0.045756">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</test>
-<test id="s1-s1-s1-t5" name="Call Provider" line="148">
-<kw name="Call Provider">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.436389" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.441547" level="FAIL">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>xpath=//div[@data-testid="action_menu_call_btn"]</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.388525" elapsed="0.055689">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//div[@data-testid="action_menu_call_btn"]</arg>
+<arg>xpath=(//div[contains(@class, 'Calendar-module__calendar_day_number css-0')])[2]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.445268" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=(//span[contains(@class, 'SkillsModalContent-module__SkillsList__Skill')])[1]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.445268" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=(//span[contains(@class, 'SkillsModalContent-module__SkillsList__Skill')])[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446318" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//button[@data-testid="next_btn"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446318" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//button[@data-testid="next_btn"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446858" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//button[@data-testid="next_btn"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446858" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//button[@data-testid="next_btn"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446858" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//button[@data-testid="next_btn"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446858" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//button[@data-testid="next_btn"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.446858" elapsed="0.001561"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.448419" elapsed="0.000401"/>
-</kw>
-<status status="FAIL" start="2025-07-11T11:58:15.388525" elapsed="0.060295">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<status status="FAIL" start="2025-07-11T11:58:15.386486" elapsed="0.063864">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</test>
-<test id="s1-s1-s1-t6" name="Accept Call as Provider and wait insession for 1m and end the call" line="152">
-<kw name="Accept Call as Provider in Incognito">
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>INC</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.454803" elapsed="0.000536"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.510487" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.516845" level="FAIL">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>xpath://*[text()='Accept']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.455907" elapsed="0.063451">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath://*[text()='Accept']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.519358" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.519358" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath://*[text()='Got It!']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.521495" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath://*[text()='Got It!']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.521495" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>50s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.521495" elapsed="0.000000"/>
-</kw>
-<kw name="Mouse Over" owner="SeleniumLibrary">
-<arg>(//button[@aria-label="End Call"])[last()]</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.521495" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:17.934196" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.521495" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:17.934196" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>(//button[@aria-label="End Call"])[last()]</arg>
-<arg>5s</arg>
+<arg>xpath=(//div[contains(@class, 'Calendar-module__calendar_day_number css-0')])[last()-1]</arg>
+<arg>30s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.523387" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:17.934196" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<arg>(//button[@aria-label="End Call"])[last()]</arg>
+<arg>xpath=(//div[contains(@class, 'Calendar-module__calendar_day_number css-0')])[last()-1]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.523387" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:17.934196" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<arg>10s</arg>
+<arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.523387" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:17.934196" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2025-07-11T11:58:15.453499" elapsed="0.069888">InvalidSessionIdException: Message: invalid session id
+<status status="FAIL" start="2025-07-11T14:52:50.624775" elapsed="27.309421">InvalidSessionIdException: Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=138.0.7204.101)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09dea]
+	(No symbol) [0x0x7ff6d4ef5f15]
+	(No symbol) [0x0x7ff6d4f1abf4]
+	(No symbol) [0x0x7ff6d4f8fa85]
+	(No symbol) [0x0x7ff6d4faff72]
+	(No symbol) [0x0x7ff6d4f88243]
+	(No symbol) [0x0x7ff6d4f51431]
+	(No symbol) [0x0x7ff6d4f521c3]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	GetHandleVerifier [0x0x7ff6d515faf4+112628]
+	GetHandleVerifier [0x0x7ff6d515fca9+113065]
+	GetHandleVerifier [0x0x7ff6d5146c78+10616]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</test>
+<test id="s1-s1-s1-t3" name="Check if available date tapped/selected by consumer should show available time slots" line="58">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:53:17.964643" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<msg time="2025-07-11T14:53:17.966408" level="FAIL">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<arg>xpath://div[contains(@class, 'AvailabiltyTab-module__Booking--Availability__Tag css-0')]</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-07-11T14:53:17.934196" elapsed="0.033251">InvalidSessionIdException: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1226,7 +604,17 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </status>
 </kw>
-<status status="FAIL" start="2025-07-11T11:58:15.451939" elapsed="0.073771">InvalidSessionIdException: Message: invalid session id
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://div[contains(@class, 'AvailabiltyTab-module__Booking--Availability__Tag css-0')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:17.967447" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:17.968461" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-07-11T14:53:17.934196" elapsed="0.034265">InvalidSessionIdException: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1247,15 +635,9 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </status>
 </test>
-<test id="s1-s1-s1-t7" name="Goto Settings and logout as consumer" line="155">
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>NORM</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.526224" elapsed="0.000000"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.526224" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings'</msg>
-<msg time="2025-07-11T11:58:15.586910" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<test id="s1-s1-s1-t4" name="Check if time slot clicked offering option to book a call" line="62">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:53:17.982992" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1275,7 +657,366 @@ Stacktrace:
 	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </msg>
-<msg time="2025-07-11T11:58:15.590276" level="FAIL">InvalidSessionIdException: Message: invalid session id
+<msg time="2025-07-11T14:53:17.982992" level="FAIL">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<arg>xpath://*[text()='Select a Topic']</arg>
+<arg>4s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2025-07-11T14:53:17.969469" elapsed="0.013523">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:17.982992" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-07-11T14:53:17.969469" elapsed="0.013523">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</test>
+<test id="s1-s1-s1-t5" name="Check if call booked its showing animation under bookings with me" line="65">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:53:18.013856" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<msg time="2025-07-11T14:53:18.016445" level="FAIL">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<arg>xpath=(//span[contains(@class, 'SkillsModalContent-module__SkillsList__Skill')])[1]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-11T14:53:17.998172" elapsed="0.019560">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=(//span[contains(@class, 'SkillsModalContent-module__SkillsList__Skill')])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.018730" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Next']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.018730" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Next']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.019822" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Verify Session']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.019822" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Verify Session']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.020828" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Book Session']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.020828" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Book Session']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.020828" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@data-testid='got_it_btn']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.022109" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//button[@data-testid='got_it_btn']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.022109" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-07-11T14:53:17.998172" elapsed="0.025230">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</test>
+<test id="s1-s1-s1-t6" name="Checking if booking in Our bookings and delete" line="83">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:53:18.050025" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<msg time="2025-07-11T14:53:18.052285" level="FAIL">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<arg>xpath=//div[@data-testid="bookings"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2025-07-11T14:53:18.024686" elapsed="0.030285">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@data-testid="bookings"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.056064" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "BookingCss-module__booking--card")])[1]//div[@data-testid="booking_delete_btn"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.056064" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=(//div[contains(@class, "BookingCss-module__booking--card")])[1]//div[@data-testid="booking_delete_btn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.056064" elapsed="0.001104"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.057168" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath://*[text()='Delete Session?']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.057168" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[text()='Delete' and contains(@class, 'chakra-button') and contains(@class, 'css-s88bex')]</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.058259" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//button[text()='Delete' and contains(@class, 'chakra-button') and contains(@class, 'css-s88bex')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.058259" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-07-11T14:53:18.058259" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-07-11T14:53:18.024686" elapsed="0.034666">InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</status>
+</test>
+<test id="s1-s1-s1-t7" name="Goto Settings and logout as consumer" line="99">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-11T14:53:18.061495" level="INFO">Opening url 'https://app-dev.taskhuman.com/settings'</msg>
+<msg time="2025-07-11T14:53:18.099780" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x0x7ff6d5156f75+76917]
+	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
+	(No symbol) [0x0x7ff6d4f09c1c]
+	(No symbol) [0x0x7ff6d4f5055f]
+	(No symbol) [0x0x7ff6d4f88332]
+	(No symbol) [0x0x7ff6d4f82e53]
+	(No symbol) [0x0x7ff6d4f81f19]
+	(No symbol) [0x0x7ff6d4ed4b05]
+	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
+	GetHandleVerifier [0x0x7ff6d5427903+3028483]
+	GetHandleVerifier [0x0x7ff6d544589d+3151261]
+	GetHandleVerifier [0x0x7ff6d517183e+185662]
+	GetHandleVerifier [0x0x7ff6d51796ff+218111]
+	(No symbol) [0x0x7ff6d4ed3b00]
+	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
+	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
+	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
+</msg>
+<msg time="2025-07-11T14:53:18.100856" level="FAIL">InvalidSessionIdException: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1297,7 +1038,7 @@ Stacktrace:
 </msg>
 <arg>https://app-dev.taskhuman.com/settings</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.526224" elapsed="0.066386">InvalidSessionIdException: Message: invalid session id
+<status status="FAIL" start="2025-07-11T14:53:18.061495" elapsed="0.040388">InvalidSessionIdException: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1322,30 +1063,30 @@ Stacktrace:
 <arg>xpath=//div[@data-testid="logout_btn"]</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.592610" elapsed="0.002728"/>
+<status status="NOT RUN" start="2025-07-11T14:53:18.102888" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>xpath=//div[@data-testid="logout_btn"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.595338" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:18.102888" elapsed="0.000000"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.596367" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:18.102888" elapsed="0.000000"/>
 </kw>
 <kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
 <arg>xpath=//div[@data-testid='confirm_btn']</arg>
 <arg>10s</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.596367" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:18.103891" elapsed="0.000000"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
 <arg>xpath=//div[@data-testid='confirm_btn']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.596367" elapsed="0.000000"/>
+<status status="NOT RUN" start="2025-07-11T14:53:18.103891" elapsed="0.000000"/>
 </kw>
-<status status="FAIL" start="2025-07-11T11:58:15.526224" elapsed="0.070143">InvalidSessionIdException: Message: invalid session id
+<status status="FAIL" start="2025-07-11T14:53:18.060391" elapsed="0.043500">InvalidSessionIdException: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1366,199 +1107,32 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </status>
 </test>
-<test id="s1-s1-s1-t8" name="Goto Settings and logout as Provider" line="163">
-<kw name="Switch Browser" owner="SeleniumLibrary">
-<arg>INC</arg>
-<doc>Switches between active browsers using ``index_or_alias``.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.596367" elapsed="0.000000"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-07-11T11:58:15.600663" level="INFO">Opening url 'https://app-dev.taskhuman.com/provider/settings'</msg>
-<msg time="2025-07-11T11:58:15.633032" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.635541" level="FAIL">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<arg>https://app-dev.taskhuman.com/provider/settings</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="FAIL" start="2025-07-11T11:58:15.600663" elapsed="0.035392">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=//div[@data-testid="logout_btn"]</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.636055" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//div[@data-testid="logout_btn"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.636055" elapsed="0.000000"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.636055" elapsed="0.000000"/>
-</kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=//div[@data-testid='confirm_btn']</arg>
-<arg>10s</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.639920" elapsed="0.000000"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//div[@data-testid='confirm_btn']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2025-07-11T11:58:15.640427" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2025-07-11T11:58:15.596367" elapsed="0.045119">InvalidSessionIdException: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</status>
-</test>
-<kw name="Close And Clean All Browsers" owner="BrowserKeywords" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-07-11T11:58:15.643496" elapsed="4.080289"/>
+<status status="PASS" start="2025-07-11T14:53:18.104908" elapsed="2.031307"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-07-11T11:58:19.725804" level="INFO">${profile} = /tmp/chrome_profiles/1752215276_EdDrw</msg>
-<var>${profile}</var>
-<arg>${_CURRENT_BROWSER_USER_DATA_DIR}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-07-11T11:58:19.723785" elapsed="0.002019"/>
-</kw>
-<kw name="Run Keyword And Return Status" owner="BuiltIn">
-<kw name="Directory Should Exist" owner="OperatingSystem">
-<msg time="2025-07-11T11:58:19.726343" level="INFO" html="true">Directory '&lt;a href="file://C:\tmp\chrome_profiles\1752215276_EdDrw"&gt;C:\tmp\chrome_profiles\1752215276_EdDrw&lt;/a&gt;' exists.</msg>
-<arg>${profile}</arg>
-<doc>Fails unless the given path points to an existing directory.</doc>
-<status status="PASS" start="2025-07-11T11:58:19.726343" elapsed="0.000000"/>
-</kw>
-<msg time="2025-07-11T11:58:19.726343" level="INFO">${exists} = True</msg>
-<var>${exists}</var>
-<arg>Directory Should Exist</arg>
-<arg>${profile}</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<status status="PASS" start="2025-07-11T11:58:19.726343" elapsed="0.000000"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Remove Directory" owner="OperatingSystem">
-<msg time="2025-07-11T11:58:19.728578" level="INFO" html="true">Removed directory '&lt;a href="file://C:\tmp\chrome_profiles\1752215276_EdDrw"&gt;C:\tmp\chrome_profiles\1752215276_EdDrw&lt;/a&gt;'.</msg>
-<arg>${profile}</arg>
-<arg>recursive=True</arg>
-<doc>Removes the directory pointed to by the given ``path``.</doc>
-<status status="PASS" start="2025-07-11T11:58:19.728578" elapsed="0.000000"/>
-</kw>
-<arg>'${profile}' != 'NONE' and ${exists}</arg>
-<arg>Remove Directory</arg>
-<arg>${profile}</arg>
-<arg>recursive=True</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2025-07-11T11:58:19.726343" elapsed="0.002235"/>
-</kw>
-<kw name="Set Suite Variable" owner="BuiltIn">
-<msg time="2025-07-11T11:58:19.728578" level="INFO">${_CURRENT_BROWSER_USER_DATA_DIR} = NONE</msg>
-<arg>${_CURRENT_BROWSER_USER_DATA_DIR}</arg>
-<arg>NONE</arg>
-<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<status status="PASS" start="2025-07-11T11:58:19.728578" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2025-07-11T11:58:15.643496" elapsed="4.085082"/>
-</kw>
-<status status="FAIL" start="2025-07-11T11:57:50.013384" elapsed="29.715194"/>
+<status status="FAIL" start="2025-07-11T14:52:30.635217" elapsed="49.500998"/>
 </suite>
-<status status="FAIL" start="2025-07-11T11:57:50.007690" elapsed="29.720888"/>
+<status status="FAIL" start="2025-07-11T14:52:30.635217" elapsed="49.500998"/>
 </suite>
-<status status="FAIL" start="2025-07-11T11:57:49.977600" elapsed="29.750978"/>
+<status status="FAIL" start="2025-07-11T14:52:30.604282" elapsed="49.531933"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="6" skip="0">All Tests</stat>
+<stat pass="1" fail="6" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="6" skip="0" id="s1" name="RaghuProject01">RaghuProject01</stat>
-<stat pass="2" fail="6" skip="0" id="s1-s1" name="CriticalFlows">RaghuProject01.CriticalFlows</stat>
-<stat pass="2" fail="6" skip="0" id="s1-s1-s1" name="TC01 CallConnectivity">RaghuProject01.CriticalFlows.TC01 CallConnectivity</stat>
+<stat pass="1" fail="6" skip="0" id="s1" name="RaghuProject01">RaghuProject01</stat>
+<stat pass="1" fail="6" skip="0" id="s1-s1" name="CriticalFlows">RaghuProject01.CriticalFlows</stat>
+<stat pass="1" fail="6" skip="0" id="s1-s1-s1" name="TC02 BookFromProviderAvailabiltyCalander">RaghuProject01.CriticalFlows.TC02 BookFromProviderAvailabiltyCalander</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-07-11T11:57:49.904528" level="WARN">Error in file 'C:\Users\Lenovo\PycharmProjects\RaghuProject01\Tests\A_sendemail.robot' on line 43: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2025-07-11T11:57:49.905534" level="WARN">Error in file 'C:\Users\Lenovo\PycharmProjects\RaghuProject01\Tests\A_sendemail.robot' on line 50: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2025-07-11T11:57:50.290636" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
-<msg time="2025-07-11T11:57:56.716097" level="WARN">desired_capabilities has been deprecated and removed. Please use options to configure browsers as per documentation.</msg>
-<msg time="2025-07-11T11:58:15.117581" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<msg time="2025-07-11T14:52:30.526648" level="WARN">Error in file 'C:\Users\Lenovo\PycharmProjects\RaghuProject01\Tests\A_sendemail.robot' on line 43: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-07-11T14:52:30.526648" level="WARN">Error in file 'C:\Users\Lenovo\PycharmProjects\RaghuProject01\Tests\A_sendemail.robot' on line 50: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2025-07-11T14:53:17.927841" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1578,7 +1152,7 @@ Stacktrace:
 	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </msg>
-<msg time="2025-07-11T11:58:15.190424" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<msg time="2025-07-11T14:53:17.964643" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1598,7 +1172,7 @@ Stacktrace:
 	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </msg>
-<msg time="2025-07-11T11:58:15.326454" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<msg time="2025-07-11T14:53:17.982992" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1618,7 +1192,7 @@ Stacktrace:
 	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </msg>
-<msg time="2025-07-11T11:58:15.377971" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<msg time="2025-07-11T14:53:18.013856" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1638,7 +1212,7 @@ Stacktrace:
 	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </msg>
-<msg time="2025-07-11T11:58:15.436389" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<msg time="2025-07-11T14:53:18.050025" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
@@ -1658,47 +1232,7 @@ Stacktrace:
 	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
 	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
 </msg>
-<msg time="2025-07-11T11:58:15.510487" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.586910" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
-Stacktrace:
-	GetHandleVerifier [0x0x7ff6d5156f75+76917]
-	GetHandleVerifier [0x0x7ff6d5156fd0+77008]
-	(No symbol) [0x0x7ff6d4f09c1c]
-	(No symbol) [0x0x7ff6d4f5055f]
-	(No symbol) [0x0x7ff6d4f88332]
-	(No symbol) [0x0x7ff6d4f82e53]
-	(No symbol) [0x0x7ff6d4f81f19]
-	(No symbol) [0x0x7ff6d4ed4b05]
-	GetHandleVerifier [0x0x7ff6d542d2ad+3051437]
-	GetHandleVerifier [0x0x7ff6d5427903+3028483]
-	GetHandleVerifier [0x0x7ff6d544589d+3151261]
-	GetHandleVerifier [0x0x7ff6d517183e+185662]
-	GetHandleVerifier [0x0x7ff6d51796ff+218111]
-	(No symbol) [0x0x7ff6d4ed3b00]
-	GetHandleVerifier [0x0x7ff6d5545f18+4201496]
-	BaseThreadInitThunk [0x0x7ffcc5abe8d7+23]
-	RtlUserThreadStart [0x0x7ffcc7bbc34c+44]
-</msg>
-<msg time="2025-07-11T11:58:15.633032" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
+<msg time="2025-07-11T14:53:18.099780" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: invalid session id
 Stacktrace:
 	GetHandleVerifier [0x0x7ff6d5156f75+76917]
 	GetHandleVerifier [0x0x7ff6d5156fd0+77008]

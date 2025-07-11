@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Resources/BrowserKeywords.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -15,7 +16,7 @@ ${CONSUMER_PASSWORD}    asdfgh@12345Q
 *** Test Cases ***
 Open the browser and login as Consumer
      # Logs in as a consumer in normal mode.
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
     Sleep    5s
     Click Element    xpath://div[@class='Login-module__signup-text css-0']

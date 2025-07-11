@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Resources/BrowserKeywords.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -42,13 +43,13 @@ Goto Settings and logout as Provider
 *** Keywords ***
 
 Open First Browser
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Set Window Size    650    1200
     Set Window Position    0    0
     Log    Normal browser size and position set.
-
+    Sleep    8s
 Open Second Browser
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    INC
     Set Window Size    650    1200
     Set Window Position    650    0
     Log    Incognito browser size and position set.
