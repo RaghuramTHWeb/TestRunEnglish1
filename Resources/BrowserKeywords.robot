@@ -43,8 +43,9 @@ Open Browser With Unique Profile
     Create Directory    ${user_data_dir}
 
     ${chrome_args}=    Create List
-    :FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
-    \    Append To List    ${chrome_args}    ${arg}
+    FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
+        Append To List    ${chrome_args}    ${arg}
+    END
     Append To List    ${chrome_args}    --user-data-dir=${user_data_dir}
 
     ${chrome_options}=    Create Dictionary    args=${chrome_args}
