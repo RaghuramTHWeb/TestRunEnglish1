@@ -30,12 +30,17 @@ Open Browser With Unique Profile
 
     ${args}=    Create List
     FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
-        Append To List    ${args}    --add-argument=${arg}
+        Append To List    ${args}    ${arg}
     END
-    Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --add-argument=--incognito
-    Append To List    ${args}    --add-argument=--user-data-dir=${profile_dir}
+    Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --incognito
+    Append To List    ${args}    --user-data-dir=${profile_dir}
 
-    Open Browser    ${url}    chrome    ${EMPTY}    alias=${alias}    ${args}
+    ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    FOR    ${arg}    IN    @{args}
+        Call Method    ${chrome options}    add_argument    ${arg}
+    END
+
+    Open Browser    ${url}    chrome    options=${chrome options}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
 
 
