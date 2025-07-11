@@ -48,12 +48,5 @@ Open Browser With Unique Profile
     END
     Append To List    ${chrome_options}    --user-data-dir=${user_data_dir}
 
-    Open Browser    ${url}    chrome    ${chrome_options}    alias=${browser_alias}
+    Open Browser    ${url}    chrome    @{chrome_options}    ${browser_alias}
     Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${user_data_dir}
-
-Close And Clean All Browsers
-    Close All Browsers
-    ${dir}=    Get Variable Value    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
-    ${exists}=    Evaluate    os.path.isdir(r'''${dir}''')    modules=os
-    Run Keyword If    '${dir}' != '${NONE}' and ${exists}    Remove Directory    ${dir}    recursive=True
-    Set Test Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${NONE}
