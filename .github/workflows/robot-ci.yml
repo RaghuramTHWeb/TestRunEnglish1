@@ -1,4 +1,4 @@
-name: Robot Framework Tests
+name: 🧪 Run Robot Framework CI Tests
 
 on:
   push:
@@ -7,41 +7,29 @@ on:
     branches: [ main ]
 
 jobs:
-  run-tests:
+  robot-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: ⬇️ Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
+      - name: ⚙️ Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Install Dependencies
-      run: |
-        pip install --upgrade pip
-        pip install robotframework robotframework-seleniumlibrary webdriver-manager
+      - name: 📦 Install Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install robotframework selenium robotframework-seleniumlibrary chromedriver-autoinstaller
 
-    - name: Setup Chrome and ChromeDriver
-      uses: browser-actions/setup-chrome@latest
-      with:
-        chrome-version: stable
+      - name: 🌐 Setup Chrome
+        uses: browser-actions/setup-chrome@v1
 
-    - name: List Project Files (Debug)
-      run: |
-        echo "==== FILE STRUCTURE ===="
-        find .
+      - name: 🧹 Clean chrome_profiles
+        run: rm -rf /tmp/chrome_profiles || true
 
-    - name: Run All Robot Framework Tests
-      run: |
-        robot -L TRACE -d output/ CriticalFlows/
-
-    - name: Upload Robot Results
-      uses: actions/upload-artifact@v4
-      with:
-        name: robot-results
-        path: output/
-        if-no-files-found: ignore
+      - name: ✅ Run Robot Framework Tests
+        run: |
+          robot --outputdir results tests/
