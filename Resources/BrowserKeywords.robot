@@ -12,6 +12,7 @@ Library    Collections
 ...    --disable-gpu
 ...    --no-sandbox
 ...    --window-size=1920,1080
+...    --remote-debugging-port=0    # ✅ Add this line
 
 ${PROFILE_ROOT_DIR}    /tmp/chrome_profiles
 ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
