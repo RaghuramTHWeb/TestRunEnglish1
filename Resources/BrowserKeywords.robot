@@ -12,8 +12,10 @@ Library    Collections
 ...    --disable-gpu
 ...    --no-sandbox
 ...    --window-size=1920,1080
-...    --remote-debugging-port=0    # ✅ Add this line
-...    --disable-dev-shm-usage    # ✅ This line solves container-level shared memory conflicts
+...    --remote-debugging-port=0
+...    --disable-dev-shm-usage
+...    --single-process
+...    --disable-background-networking
 
 ${PROFILE_ROOT_DIR}    /tmp/chrome_profiles
 ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
@@ -38,6 +40,7 @@ Open Browser With Unique Profile
     Append To List    ${args}    --user-data-dir=${profile_dir}
 
     ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${chrome options}    add_argument    --headless=new
     FOR    ${arg}    IN    @{args}
         Call Method    ${chrome options}    add_argument    ${arg}
     END

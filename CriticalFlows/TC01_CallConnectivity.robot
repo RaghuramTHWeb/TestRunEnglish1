@@ -124,7 +124,7 @@ Open and Position Browsers
     Set Window Position    0    0
     Log    Normal browser size and position set.
 
-    Sleep    5s    # ✅ Add this to stagger browser launches in CI
+    Sleep    8s    # ✅ Add this to stagger browser launches in CI
 
     # Open second browser (incognito mode)
     # Changed to use Open Browser With Unique Profile
