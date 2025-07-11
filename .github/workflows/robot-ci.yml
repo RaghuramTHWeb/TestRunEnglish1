@@ -27,9 +27,10 @@ jobs:
       - name: 🌐 Setup Chrome
         uses: browser-actions/setup-chrome@v1
 
-      - name: 🧹 Clean chrome_profiles
+      - name: 🧹 Clean /tmp/chrome_profiles
         run: rm -rf /tmp/chrome_profiles || true
 
       - name: ✅ Run Robot Framework Tests
         run: |
-          robot --outputdir results tests/
+          cd RaghuProject01
+          robot --outputdir results CriticalFlows/
