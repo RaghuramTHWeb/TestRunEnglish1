@@ -17,11 +17,12 @@ ${PROFILE_ROOT_DIR}    /tmp/chrome_profiles
 ${_CURRENT_BROWSER_USER_DATA_DIR}    NONE
 
 *** Keywords ***
+
 Open Browser With Unique Profile
     [Arguments]    ${url}    ${alias}
 
     ${uuid}=    Evaluate    __import__('uuid').uuid4().hex
-    ${profile_dir}=  Set Variable    ${PROFILE_ROOT_DIR}/${alias}_${uuid}
+    ${profile_dir}=    Set Variable    ${PROFILE_ROOT_DIR}/${alias}_${uuid}
 
     ${exists}=    Run Keyword And Return Status    Directory Should Exist    ${PROFILE_ROOT_DIR}
     Run Keyword Unless    ${exists}    Create Directory    ${PROFILE_ROOT_DIR}
@@ -39,9 +40,9 @@ Open Browser With Unique Profile
         Call Method    ${chrome options}    add_argument    ${arg}
     END
 
-    Open Browser    ${url}    chrome    options=${chrome options}    alias=${alias}
+    # ✅ Fixed: Use all named arguments to avoid mixing positional + named
+    Open Browser    url=${url}    browser=chrome    options=${chrome options}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
-
 
 
 Join Chrome Args
@@ -50,7 +51,7 @@ Join Chrome Args
     FOR    ${item}    IN    @{args}
         ${joined}=    Set Variable    ${joined} ${item}
     END
-    [Return]    ${joined}
+    RETURN    ${joined}    # ✅ Fixed deprecated [Return]
 
 Close And Clean All Browsers
     Close All Browsers
