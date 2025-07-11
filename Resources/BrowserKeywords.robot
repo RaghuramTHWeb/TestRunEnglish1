@@ -31,24 +31,26 @@ Open Browser With Unique Profile
     Run Keyword Unless    ${exists}    Create Directory    ${PROFILE_ROOT_DIR}
     Create Directory    ${profile_dir}
 
-
     ${args}=    Create List
     FOR    ${arg}    IN    @{CHROME_BASE_ARGS}
         Append To List    ${args}    ${arg}
+    END
+
     Run Keyword If    '${alias}' == 'INC'    Append To List    ${args}    --incognito
     Append To List    ${args}    --user-data-dir=${profile_dir}
 
     ${chrome options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
 
-    # ✅ Use ROBOT_HEADLESS if defined (in CI), to avoid headless issues locally
     ${headless}=    Get Environment Variable    ROBOT_HEADLESS    default=None
     Run Keyword If    '${headless}' != 'None'    Call Method    ${chrome options}    add_argument    ${headless}
 
     FOR    ${arg}    IN    @{args}
         Call Method    ${chrome options}    add_argument    ${arg}
+    END
 
     Open Browser    url=${url}    browser=chrome    options=${chrome options}    alias=${alias}
     Set Suite Variable    ${_CURRENT_BROWSER_USER_DATA_DIR}    ${profile_dir}
+
 
 Close And Clean All Browsers
     Close All Browsers
