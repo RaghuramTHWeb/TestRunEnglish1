@@ -52,7 +52,7 @@ Switch To User View and validate if switched correctly
 Check if tile is visible in discovery section by switching to user view
     Wait Until Element Is Visible    css=.DiscoverTab-module__Header--tab:first-child    10s
 Login as Provider
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']
     Sleep    5s
     Click Element    xpath://div[@class='Login-module__signup-text css-0']

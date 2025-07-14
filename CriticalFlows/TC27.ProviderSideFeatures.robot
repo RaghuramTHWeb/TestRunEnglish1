@@ -79,8 +79,8 @@ Validate Each module in settings
     Wait Until Element Is Visible    xpath=//div[contains(@class, 'ReferCoach-module__ReferCoach')]//a[contains(text(), 'Refer a Coach')]    10s
     Click Element    xpath=//div[contains(@class, 'ReferCoach-module__ReferCoach')]//a[contains(text(), 'Refer a Coach')]
     Switch Window    NEW
-    Wait Until Location Is    https://taskhuman.com/community-referral/    10s
-    Location Should Be    https://taskhuman.com/community-referral/
+    Wait Until Location Is    https://taskhuman.typeform.com/to/MhfQhWhP?typeform-source=taskhuman.zendesk.com    10s
+    Location Should Be    https://taskhuman.typeform.com/to/MhfQhWhP?typeform-source=taskhuman.zendesk.com
 
     #Go To    https://app-dev.taskhuman.com/provider/settings/inviteClient
     ##Wait Until Element Is Visible    xpath=//div[contains(@class,'InviteClient-module__InviteClient')]//a[contains(text(), 'TaskHuman Mobile App')]    10s

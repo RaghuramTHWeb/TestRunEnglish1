@@ -83,7 +83,7 @@ validate if on adding card it can be made default
     #can verify redirected URL if need
 
 Validate if added card can be deleted
-    Wait Until Element Is Visible    xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']    10s
+    #Wait Until Element Is Visible    xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']    10s
     Click Element    xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']
     Sleep    3s
     Wait Until Element Is Visible    xpath=//*[text()='Delete']    10s
