@@ -46,29 +46,48 @@ Check consumer is able to add cards under payment methods
     Wait Until Element Is Visible    xpath=//*[text()='Payment Methods']    10s
     Click Element    xpath=//*[text()='Payment Methods']
     Sleep    3s
-
-    # Input Card Number
-    Wait Until Element Is Visible    css=iframe[src*='stripe']    10s
-    Select Frame    css=iframe[src*='stripe']
-    Wait Until Element Is Visible    css=input[placeholder='Card Number']    15s
-    Click Element    css=input[placeholder='Card Number']
-    Input Text    css=input[placeholder='Card Number']    4242424242424242
+    # CARD NUMBER
+    Wait Until Element Is Visible    xpath=(//iframe[contains(@name, '__privateStripeFrame')])[1]    10s
+    Select Frame                     xpath=(//iframe[contains(@name, '__privateStripeFrame')])[1]
+    Wait Until Element Is Visible    xpath=//input[@name='cardnumber']    5s
+    Input Text                       xpath=//input[@name='cardnumber']    4242 4242 4242 4242
     Unselect Frame
-    Sleep    2s
+
+    # EXPIRY DATE
+    Wait Until Element Is Visible    xpath=(//iframe[contains(@name, '__privateStripeFrame')])[2]    10s
+    Select Frame                     xpath=(//iframe[contains(@name, '__privateStripeFrame')])[2]
+    Wait Until Element Is Visible    xpath=//input[@name='exp-date']    5s
+    Input Text                       xpath=//input[@name='exp-date']    12/28
+    Unselect Frame
+
+    # CVC
+    Wait Until Element Is Visible    xpath=(//iframe[contains(@name, '__privateStripeFrame')])[3]    10s
+    Select Frame                     xpath=(//iframe[contains(@name, '__privateStripeFrame')])[3]
+    Wait Until Element Is Visible    xpath=//input[@name='cvc']    5s
+    Input Text                       xpath=//input[@name='cvc']    123
+    Unselect Frame
+    # Input Card Number
+   # Wait Until Element Is Visible    css=iframe[src*='stripe']    10s
+   # Select Frame    css=iframe[src*='stripe']
+   # Wait Until Element Is Visible    css=input[placeholder='Card Number']    15s
+   # Click Element    css=input[placeholder='Card Number']
+   # Input Text    css=input[placeholder='Card Number']    4242424242424242
+   # Unselect Frame
+   # Sleep    2s
  # Click the element at coordinates
-    Execute JavaScript    document.elementFromPoint(352, 387).click()
-    Sleep    2s
-    Press Keys    none    1
-    Press Keys    none    2
-    Press Keys    none    2
-    Press Keys    none    8
-    Sleep    5s
-    Execute JavaScript    document.elementFromPoint(354, 435).click()
-    Sleep    2s
-    Press Keys    none    1
-    Press Keys    none    2
-    Press Keys    none    3
-    Sleep    5s
+   # Execute JavaScript    document.elementFromPoint(352, 387).click()
+   # Sleep    2s
+   ## Press Keys    none    1
+    #Press Keys    none    2
+    #Press Keys    none    2
+    #Press Keys    none    8
+    #Sleep    5s
+    #Execute JavaScript    document.elementFromPoint(354, 435).click()
+    #Sleep    2s
+    #Press Keys    none    1
+    #Press Keys    none    2
+    #Press Keys    none    3
+    #Sleep    5s
 
 
 validate if on adding card it can be made default
@@ -83,7 +102,7 @@ validate if on adding card it can be made default
     #can verify redirected URL if need
 
 Validate if added card can be deleted
-    #Wait Until Element Is Visible    xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']    10s
+    Wait Until Element Is Visible    xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']    10s
     Click Element    xpath://p[@class='chakra-text SettingComponents-module__Card--Number css-0']
     Sleep    3s
     Wait Until Element Is Visible    xpath=//*[text()='Delete']    10s

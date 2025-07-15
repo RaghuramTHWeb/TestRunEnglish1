@@ -113,8 +113,8 @@ Login as Consumer
     Sleep    4s
 
 Search for Provider
-    Go To    https://app-dev.taskhuman.com/search/name/raghu
-    Wait Until Element Is Visible    xpath=//div[@data-testid="action_menu_call_btn"]    10s
+    Go To    https://app-dev.taskhuman.com/search/name/raghu%20ram
+    Wait Until Element Is Visible    xpath=//div[@data-testid="action_menu_call_btn"]    20s
     Click Element                    xpath=//div[@data-testid="action_menu_call_btn"]
     Sleep    5s
 

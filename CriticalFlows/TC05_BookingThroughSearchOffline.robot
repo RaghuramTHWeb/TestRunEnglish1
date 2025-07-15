@@ -39,12 +39,12 @@ Login as Consumer
     Login as Consumer
 
 Search for Provider and Book
-    Go To    https://app-dev.taskhuman.com/search/name/raghu
+    Go To    https://app-dev.taskhuman.com/search/name/raghu%20ram
     #Sleep    5s
     #Wait Until Element Is Visible    xpath=//div[contains(@class, 'ActionMenu-module__ActionMenu--Search--Box') and .//p[text()='Book']]    5s
     #Click Element    xpath=//div[contains(@class, 'ActionMenu-module__ActionMenu--Search--Box') and .//p[text()='Book']]
     #Sleep    5s
-    Wait Until Element Is Visible    xpath=//div[@data-testid="action_menu_book_btn"]    10s
+    Wait Until Element Is Visible    xpath=//div[@data-testid="action_menu_book_btn"]    20s
     Click Element                    xpath=//div[@data-testid="action_menu_book_btn"]
     Wait Until Page Contains Element    xpath://*[text()='Select a Topic']    10s
     #Sleep    2s
