@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Resources/BrowserKeywords.robot
 Resource    ../Common_Resources/PreloginArabicSelection.robot
-
+Suite Teardown    Close And Clean All Browsers
 
 *** Variables ***
 ${PROVIDER_EMAIL}    raghuram.m+rp1@taskhuman.com
@@ -44,21 +45,28 @@ Validate if booking can be rescheduled to tomorrow
 Validate if booking can be deleted
     Validate if booking can be deleted
 
-Close browser
-    Close Browser
+Goto Settings and logout as consumer
+    Goto Settings and logout as consumer
+Goto Settings and logout as Provider
+    Goto Settings and logout as Provider
 
 *** Keywords ***
 
 Open and Position Browsers
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Set Window Size    650    1200
     Set Window Position    0    0
-    Log    Normal browser size and position set
+    Log    Normal browser size and position set.
 
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
+    Sleep    8s    # ✅ Add this to stagger browser launches in CI
+
+    # Open second browser (incognito mode)
+    # Changed to use Open Browser With Unique Profile
+    # The --incognito option is part of the ${CHROME_BASE_OPTIONS} variable now in BrowserKeywords.robot
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    INC
     Set Window Size    650    1200
     Set Window Position    650    0
-    Log    Incognito browser size and position set
+    Log    Incognito browser size and position set.t
 
 Login as Provider in Incognito
     Switch Browser    INC
@@ -206,5 +214,20 @@ Validate if booking can be deleted
     # Click confirm delete button
     Click Element    xpath=//button[normalize-space(.)='يمسح']
     Sleep    1s
+Goto Settings and logout as consumer
+    Switch Browser    NORM
+    Go To    https://app-dev.taskhuman.com/settings
+    Wait Until Page Contains Element    xpath=//div[@data-testid="logout_btn"]    10s
+    Click Element                       xpath=//div[@data-testid="logout_btn"]
+    Sleep    3s
+    Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
+    Click Element                       xpath=//div[@data-testid='confirm_btn']
 
-    Close Browser
+Goto Settings and logout as Provider
+    Switch Browser    INC
+    Go To    https://app-dev.taskhuman.com/provider/settings
+    Wait Until Page Contains Element    xpath=//div[@data-testid="logout_btn"]    10s
+    Click Element                       xpath=//div[@data-testid="logout_btn"]
+    Sleep    3s
+    Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
+    Click Element                       xpath=//div[@data-testid='confirm_btn']

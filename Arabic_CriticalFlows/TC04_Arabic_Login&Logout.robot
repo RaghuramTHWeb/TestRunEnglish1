@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Common_Resources/PreloginArabicSelection.robot
+Resource    ../Resources/BrowserKeywords.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -13,7 +14,7 @@ ${CONSUMER_PASSWORD}    asdfgh@12345Q
 
 *** Test Cases ***
 Check for language in Arabic and switch if needed
-    Open Browser   https://app-dev.taskhuman.com/login    chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Maximize Browser Window
     Ensure Arabic Language Selected
 
