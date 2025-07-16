@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Common_Resources/PreloginArabicSelection.robot
+Resource    ../Resources/BrowserKeywords.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -36,16 +37,28 @@ Accept Call as Provider in Incognito
 
 Extend Call for ${EXTENDED_CALL_TIME} seconds
     Extend Call Duration
+Goto Settings and logout as consumer
+    Goto Settings and logout as consumer
+Goto Settings and logout as Provider
+    Goto Settings and logout as Provider
+
 
 *** Keywords ***
 Open and Position Browsers
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=NORM
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Set Window Size    650    1200
     Set Window Position    0    0
+    Log    Normal browser size and position set.
 
-    Open Browser    https://app-dev.taskhuman.com/login    Chrome    alias=INC    options=add_argument("--incognito")
+    Sleep    8s    # ✅ Add this to stagger browser launches in CI
+
+    # Open second browser (incognito mode)
+    # Changed to use Open Browser With Unique Profile
+    # The --incognito option is part of the ${CHROME_BASE_OPTIONS} variable now in BrowserKeywords.robot
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    INC
     Set Window Size    650    1200
     Set Window Position    650    0
+    Log    Incognito browser size and position set.
 
 Login as Provider in Incognito
    Switch Browser    INC
@@ -147,6 +160,7 @@ Extend Call Duration
     #Click Element    xpath://*[text()='Got It!']
     Sleep    4s
     Sleep    ${EXTENDED_CALL_TIME}s
+    Mouse Over    //div[@data-testid="video-calling-top-bar"]
     Wait Until Element Is Visible    xpath=//div[text()="يمتد"]    10s
     Click Element    xpath=//div[text()="يمتد"]
     #Wait Until Element Is Visible    xpath=//*[text()='Extend']    10s
@@ -157,7 +171,25 @@ Extend Call Duration
     #Wait Until Element Is Visible    (//button[@aria-label="End Call"])[last()]    5s
     #Click Element    (//button[@aria-label="End Call"])[last()]
     Switch Browser    INC
+    Mouse Over    (//button[@aria-label="End Call"])[last()]
     Wait Until Element Is Visible    (//button[@aria-label="End Call"])[last()]    5s
     Click Element                    (//button[@aria-label="End Call"])[last()]
     Wait Until Page Contains Element    xpath=//div[contains(@class,'ProviderFeedback-module__Feedback--container')]    10s
     Sleep    5s
+Goto Settings and logout as consumer
+    Switch Browser    NORM
+    Go To    https://app-dev.taskhuman.com/settings
+    Wait Until Page Contains Element    xpath=//div[@data-testid="logout_btn"]    10s
+    Click Element                       xpath=//div[@data-testid="logout_btn"]
+    Sleep    3s
+    Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
+    Click Element                       xpath=//div[@data-testid='confirm_btn']
+
+Goto Settings and logout as Provider
+    Switch Browser    INC
+    Go To    https://app-dev.taskhuman.com/provider/settings
+    Wait Until Page Contains Element    xpath=//div[@data-testid="logout_btn"]    10s
+    Click Element                       xpath=//div[@data-testid="logout_btn"]
+    Sleep    3s
+    Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
+    Click Element                       xpath=//div[@data-testid='confirm_btn']

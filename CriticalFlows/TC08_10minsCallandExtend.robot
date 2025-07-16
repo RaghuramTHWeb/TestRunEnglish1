@@ -114,8 +114,8 @@ Login as Consumer in Normal Mode
 Go To Provider Profile
     Go To    ${PROVIDER_PROFILE_URL}
     Sleep    3s
-    Wait Until Element Is Visible    xpath=//img[@src='/63e8644ad289ec350b93.svg' and contains(@class, 'chakra-image css-0')]    10s
-    Click Element    xpath=//img[@src='/63e8644ad289ec350b93.svg' and contains(@class, 'chakra-image css-0')]
+    Wait Until Element Is Visible    css=[data-testid="action_menu_call_btn"]    10s
+    Click Element    css=[data-testid="action_menu_call_btn"]
     Sleep    5s
 
 Place Call for ${CALL_DURATION} minutes
