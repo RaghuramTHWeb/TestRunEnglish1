@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    ../Common_Resources/PreloginArabicSelection.robot
+Resource    ../Resources/BrowserKeywords.robot
 Suite Teardown    Close All Browsers
 
 *** Variables ***
@@ -13,7 +14,7 @@ ${CONSUMER_PASSWORD}    asd@123Q
 
 *** Test Cases ***
 Open the browser and login as New Consumer
-    Open Browser   https://app-dev.taskhuman.com/login    chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Maximize Browser Window
     Ensure Arabic Language Selected
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s

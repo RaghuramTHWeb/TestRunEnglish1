@@ -2,7 +2,8 @@
 Library    SeleniumLibrary
 Library    SeleniumLibrary
 Resource    ../Common_Resources/PreloginArabicSelection.robot
-
+Resource    ../Resources/BrowserKeywords.robot
+Suite Teardown    Close All Browsers
 
 *** Variables ***
 ${CONSUMER_EMAIL}    raghuram.m+rc1@taskhuman.com
@@ -17,7 +18,7 @@ ${GOT_IT_BUTTON}           xpath=//div[text()='فهمتها!']
 
 *** Test Cases ***
 Open the browser and login as Consumer
-    Open Browser   https://app-dev.taskhuman.com/login    chrome
+    Open Browser With Unique Profile    https://app-dev.taskhuman.com/login    NORM
     Maximize Browser Window
     Ensure Arabic Language Selected
     Wait Until Element Is Visible    xpath://div[@class='Login-module__signup-text css-0']    10s
@@ -51,4 +52,10 @@ Validate if 3 instructions are visible
     #Sleep    2s
     Wait Until Element Is Visible    ${GOT_IT_BUTTON}    10s
     Click Element    ${GOT_IT_BUTTON}
-    Close Browser
+Goto Settings and logout as consumer
+    Go To    https://app-dev.taskhuman.com/settings
+    Wait Until Page Contains Element    xpath=//div[@data-testid="logout_btn"]    10s
+    Click Element                       xpath=//div[@data-testid="logout_btn"]
+    Sleep    3s
+    Wait Until Page Contains Element    xpath=//div[@data-testid='confirm_btn']    10s
+    Click Element                       xpath=//div[@data-testid='confirm_btn']
